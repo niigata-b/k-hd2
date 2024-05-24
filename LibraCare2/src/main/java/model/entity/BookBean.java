@@ -1,6 +1,8 @@
 package model.entity;
 
-public class BookBean { 
+import java.io.Serializable;
+
+public class BookBean implements Serializable{ 
 	
 	private String isbn; 
 	
