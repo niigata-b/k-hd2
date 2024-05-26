@@ -1,11 +1,14 @@
 package servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class BookDetailServlet
@@ -34,8 +37,33 @@ public class BookDetailServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+		request.setCharacterEncoding("UTF-8"); 
+		
+		HttpSession session = request.getSession(); 
+		
+		String url = null; 
+		try {
+			if (session.getAttribute("bookList")!=null) {
 
+				url = "book-detail.jsp"; //図書詳細画面へ
+
+			} else {
+				// 未認証
+				url = "book-detail-failure.jsp";//図書詳細失敗画面へ
+			} 
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		RequestDispatcher rd = request.getRequestDispatcher(url);
+		rd.forward(request, response);
+	} 
 }
+
+	
+		
+		
+		
+		
+		
+		
+		

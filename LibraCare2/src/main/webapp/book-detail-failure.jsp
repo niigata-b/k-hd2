@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<h2>図書詳細失敗画面</h2> 
+	図書の詳細が見つかりませんでした 
+	<form action="booklistservlet"> 
+	<input type="submit" value="図書一覧に戻る">
+	</form>
 </body>
 </html>
