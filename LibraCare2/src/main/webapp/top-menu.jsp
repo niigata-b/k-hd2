@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>トップメニュー画面</h1>
-	<form action="admin-menu.jsp" method="post">
+	<form action="admin-management-menu.jsp" method="post">
 		<input type="submit" value="管理者管理メニュー">
 	</form>
 
