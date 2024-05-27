@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class BookInsertConfirmServlet
  */
-@WebServlet("/bookInsertconfirm")
+@WebServlet("/bookinsertconfirm")
 public class BookInsertConfirmServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
