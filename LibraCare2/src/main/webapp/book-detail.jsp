@@ -28,24 +28,25 @@
 	<td><%=bookdetail.getBookName() %></td>
 	<td><%=bookdetail.getCategoryName() %></td>
 	<td><%=bookdetail.getBookCount() %><td>
-	<td><%=bookdetail.getBookTotalCount() %><td>
+	<td><%=bookdetail.getTotalBookCount() %><td>
 	<td><%=bookdetail.getTotalLendingCount() %><td>
 	<td><%=bookdetail.getLendingFlag() %></td> 
 	</tr> 
 	</table>
 
-	<form action="bookupdateform">
+	<form action="bookupdateform" method ="POST">
 		<input type="hidden" name ="isbn" value="<%=bookdetail.getIsbn() %>">
 		<input type="hidden" name ="book_name" value="<%=bookdetail.getBookName() %>">
 		<input type="hidden" name ="category_name" value="<%=bookdetail.getCategoryName() %>">
 		<input type="hidden" name ="book_count" value="<%=bookdetail.getBookCount() %>">
+		<input type="hidden" name ="total_book_count" value="<%=bookdetail.getBookCount() %>">
 		<input type="hidden" name ="lending_flag" value="<%=bookdetail.getLendingFlag() %>">
 		<input type="submit" value="図書詳細情報変更">
 	</form>
-	<form action="book-delete.jsp">
+	<form action="book-delete.jsp" metohd ="POST">
 		<input type="submit" value="図書詳細情報削除">
 	</form>
-	<form action="booklist" method="post">
+	<form action="booklist" method="POST">
 		<input type="submit" value="図書一覧画面に戻る">
 	</form>
 </body>

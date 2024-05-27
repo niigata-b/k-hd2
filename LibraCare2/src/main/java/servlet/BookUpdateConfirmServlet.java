@@ -42,9 +42,11 @@ public class BookUpdateConfirmServlet extends HttpServlet {
 
 		int huyasu = 0;
 		int herasu = 0;
-		String messageNull = null;
-		String messageNum = null;
-		String url = "update-confirm.jsp";
+		String messageNull;
+		String messageNum;
+		String messageDupli;
+		String messageZero;
+		String url = "book-update-confirm.jsp";
 
 		try {
 			huyasu = Integer.parseInt(request.getParameter("huyasu"));
@@ -52,13 +54,32 @@ public class BookUpdateConfirmServlet extends HttpServlet {
 		} 
 		catch(NumberFormatException e)
 		{
+			System.out.println("num");
 			messageNum = "数値を入力してください。";
+			url = "book-update.jsp";
 			request.setAttribute("messageNum", messageNum);
 		}
 		catch(NullPointerException e)
 		{
+			System.out.println("null");
 			messageNull = "値が入力されていません。";
+			url = "book-update.jsp";
 			request.setAttribute("messageNull", messageNull);
+		}
+		
+		if(huyasu > 0 && herasu > 0)
+		{
+			System.out.println("dupli");
+			messageDupli = "どちらかのみに入力してください。";
+			url = "book-update.jsp";
+			request.setAttribute("messageDupli", messageDupli);
+		}
+		else if(huyasu == 0 && herasu == 0)
+		{
+			System.out.println("zero");
+			messageZero = "1以上の値を入力してください。";
+			url = "book-update.jsp";
+			request.setAttribute("messageZero", messageZero);
 		}
 
 		String isbn = request.getParameter("isbn");
@@ -89,6 +110,7 @@ public class BookUpdateConfirmServlet extends HttpServlet {
 		if(cancel == 1)
 		{
 			url = "book-update.jsp";
+			System.out.println("cancel");
 		}
 
 		// リクエストの転送
