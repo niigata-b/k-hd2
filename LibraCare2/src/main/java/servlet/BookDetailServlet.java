@@ -8,12 +8,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
+import model.dao.BookDAO;
+import model.entity.BookBean;
 
 /**
  * Servlet implementation class BookDetailServlet
  */
-@WebServlet("/BookDetailServlet")
+@WebServlet("/bookdetail")
 public class BookDetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -39,13 +41,20 @@ public class BookDetailServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8"); 
 		
-		HttpSession session = request.getSession(); 
+		String isbn = request.getParameter("isbn");
 		
-		String url = null; 
-		try {
-			if (session.getAttribute("bookList")!=null) {
+		String url = null;   
+		
+		
+		
+		BookDAO dao = new BookDAO();
+		try { 
+			
+			BookBean bookDetail = dao.detail(isbn);
+			if (request.getAttribute("isbn")!=null) {
 
-				url = "book-detail.jsp"; //図書詳細画面へ
+				url = "book-detail.jsp"; //図書詳細画面へ 
+				request.setAttribute("bookDetail", bookDetail);
 
 			} else {
 				// 未認証

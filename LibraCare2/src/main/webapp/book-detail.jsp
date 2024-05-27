@@ -8,14 +8,18 @@
 </head>
 <body>
 	<h2>図書詳細画面</h2> 
-	<%List<BookBean> bookList =(List<BookBean>) session.getAttribute("bookList"); %>
-	<%for(BookBean book : bookList){ %>
+	<% 
+	List<BookBean> bookDetail =(List<BookBean>) request.getAttribute("bookDetail");  
+	%>
+	<% 
+	for(BookBean bookdetail : bookDetail){  
+	%>
 		
-			ISBN<%=book.getIsbn() %>
-			図書名<%=book.getBookName() %>
-			カテゴリ名<%=book.getCategoryName() %>
-			個数<%=book.getBookCount() %>
-			貸出中フラグ<%=book.getLendingFlag() %>
+			ISBN<%=bookdetail.getIsbn() %>
+			図書名<%=bookdetail.getBookName() %>
+			カテゴリ名<%=bookdetail.getCategoryName() %>
+			個数<%=bookdetail.getBookCount() %>
+			貸出中フラグ<%=bookdetail.getLendingFlag() %>
 	<form action="book-insert.jsp"> 
 	<input type="submit" value="図書詳細情報変更">
 	</form> 

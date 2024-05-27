@@ -9,7 +9,7 @@
 <body>
 	<h2>図書詳細失敗画面</h2> 
 	図書の詳細が見つかりませんでした 
-	<form action="booklistservlet"> 
+	<form action="booklist"> 
 	<input type="submit" value="図書一覧に戻る">
 	</form>
 </body>

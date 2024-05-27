@@ -1,6 +1,7 @@
 package model.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -38,9 +39,34 @@ public class BookDAO {
 					}
 				}
 				return bookList;
-			}
-
+			
 	}
 
 
+	public BookBean detail(String isbn) throws SQLException,ClassNotFoundException{ 
+		BookBean book = new BookBean();
+		
+		String sql = "SELECT * FROM book where isbn =?";
+		try(Connection con = ConnectionManager.getConnection(); 
+				PreparedStatement pstmt = con.prepareStatement(sql)){
+				
+			
+			pstmt.setString(1,isbn); 
+			
+			ResultSet res = pstmt.executeQuery(); 
+			
+			while(res.next()) { 
+				book.setIsbn(res.getString("isbn"));
+				book.setBookName(res.getString("book_name"));
+				book.setCategoryName(res.getString("category_name"));
+				book.setBookCount(res.getInt("book_count"));
+				book.setLendingFlag(res.getString("lending_flag")); 
+				
+				
+			}
+	} 
+		return book;
+
+	} 
+}
 

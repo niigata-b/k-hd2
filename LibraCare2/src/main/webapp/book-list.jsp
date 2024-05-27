@@ -37,7 +37,7 @@
 			<td><%=book.getCategoryName() %></td>
 			<td><%=book.getBookCount() %></td>
 			<td><%=book.getLendingFlag() %></td>
-			<td><form action="bookdeailservlet" method="post">
+			<td><form action="bookdetail" method="post">
 					<input type="submit" value="詳細">
 				</td>
 		</tr>
