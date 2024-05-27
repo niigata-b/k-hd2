@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -9,14 +10,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
+import model.dao.BookDAO;
 import model.entity.BookBean;
 
 /**
  * Servlet implementation class BookListServlet
  */
-@WebServlet("/booklistsevlet")
+@WebServlet("/booklist")
 public class BookListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -44,24 +45,32 @@ public class BookListServlet extends HttpServlet {
 
 		String url = null;
 
-		HttpSession session = request.getSession();
 
+		List<BookBean> bookList = null; 
+		
 		BookDAO dao = new BookDAO(); 
-		List<BookBean> bookList = dao.selectAll(); 
-		try {
+	
+				try {
+					bookList = dao.selectAll();
+				} catch (ClassNotFoundException e) {
+					// TODO 自動生成された catch ブロック
+					e.printStackTrace();
+				} catch (SQLException e) {
+					// TODO 自動生成された catch ブロック
+					e.printStackTrace();
+				}
+	
 			if (bookList!=null) {
 
-				session.setAttribute("bookList",bookList);
+
+			 request.setAttribute("bookList",bookList);
 				url = "book-list.jsp"; //図書一覧へ
 
 			} else {
 				// 未認証
 				url = "book-list-failure.jsp";//一覧表示失敗画面へ
 			} 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
+	
 
 		// リクエストの転送
 		RequestDispatcher rd = request.getRequestDispatcher(url);

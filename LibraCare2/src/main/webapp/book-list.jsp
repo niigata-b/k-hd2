@@ -13,10 +13,12 @@
 			value="検索">
 	</form>
 	<form action="categoryserchservlet" method="post">
-		図書名検索<input type="text" name="category_name"> <input
+		カテゴリ検索<input type="text" name="category_name"> <input
 			type="submit" value="検索">
 	</form>
-	<%List<BookBean> bookList =(List<BookBean>) session.getAttribute("bookList"); %>
+	<% 
+	List<BookBean> bookList =(List<BookBean>) request.getAttribute("bookList");  
+	%>
 	<table>
 		<tr>
 			<th>ISBN</th>
@@ -26,7 +28,9 @@
 			<th>貸出中フラグ</th>
 			<th></th>
 		</tr>
-		<%for(BookBean book : bookList){ %>
+		<% 
+		for(BookBean book : bookList){  
+		%>
 		<tr>
 			<td><%=book.getIsbn() %></td>
 			<td><%=book.getBookName() %></td>
@@ -35,7 +39,7 @@
 			<td><%=book.getLendingFlag() %></td>
 			<td><form action="bookdeailservlet" method="post">
 					<input type="submit" value="詳細">
-				</form></td>
+				</td>
 		</tr>
 		<%} %>
 	</table>

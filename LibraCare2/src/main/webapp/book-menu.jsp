@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h2>図書管理メニュー</h2>
-	<form action="booklistservlet" method="post">
+	<form action="booklist" method="post">
 		<input type="submit" value="図書一覧">
 	</form>
 	<form action="book-insert.jsp">
