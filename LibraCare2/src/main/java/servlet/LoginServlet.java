@@ -12,9 +12,8 @@ import javax.servlet.http.HttpSession;
 
 import model.dao.AdminDAO;
 
-
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class LoginServletTest
  */
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
@@ -48,6 +47,7 @@ public class LoginServlet extends HttpServlet {
 
 		String admin_id = request.getParameter("admin_id");
 		String password = request.getParameter("password");
+		String loginFailureMessage = ("ログインに失敗しました");
 
 		try {
 			AdminDAO adminDao = new AdminDAO();
@@ -60,6 +60,7 @@ public class LoginServlet extends HttpServlet {
 
 			} else {
 				url = "top-menu-login.jsp";
+				request.setAttribute("loginFailureMessage",loginFailureMessage);
 			}
 
 		} catch (Exception e) {
