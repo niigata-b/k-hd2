@@ -68,7 +68,48 @@ public class BookDAO {
 		return book;
 
 	} 
+	public int bookinsert(BookBean book) throws SQLException, ClassNotFoundException {
+		String sql = "insert into book (isbn,book_name,category_name,book_count,total_book_count) "
+				+ "values(?,?,?,?,?)";
+				
+		int count = 0;
+		// データベースへの接続の取得、Statementの取得、SQLステートメントの実行
+		try (Connection con = ConnectionManager.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)){
 
-	} 
+			// ?に値を格納
+			pstmt.setString(1, book.getIsbn());
+			pstmt.setString(2, book.getBookName());
+			pstmt.setString(3, book.getCategoryName());
+			pstmt.setInt(4, book.getBookCount());
+			pstmt.setInt(5, book.getTotalBookCount());
+			
+			count = pstmt.executeUpdate();
+		}
+		return count;
+	}
+	
+	public int bookdelete(BookBean book) throws SQLException, ClassNotFoundException {
+		String sql = "delete from book where isbn = ? book_name = ? category_name = ? book_count = ? book_total_count = ?";
+		int count = 0;
+		// データベースへの接続の取得、Statementの取得、SQLステートメントの実行
+		try (Connection con = ConnectionManager.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)){
+
+			// ?に値を格納
+			pstmt.setString(1, book.getIsbn());
+			pstmt.setString(2, book.getBookName());
+			pstmt.setString(3, book.getCategoryName());
+			pstmt.setInt(4, book.getBookCount());
+			pstmt.setInt(5, book.getTotalBookCount());
+			
+			count = pstmt.executeUpdate();
+		}
+		return count;
+	}
+	
+}
+
+	
 
 
