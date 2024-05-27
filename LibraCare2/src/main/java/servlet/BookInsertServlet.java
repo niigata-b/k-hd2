@@ -16,7 +16,7 @@ import model.entity.BookBean;
 /**
  * Servlet implementation class BookInsertServlet
  */
-@WebServlet("/BookInsertServlet")
+@WebServlet("/bookinsert")
 public class BookInsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
