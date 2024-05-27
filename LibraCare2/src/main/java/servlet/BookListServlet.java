@@ -51,7 +51,6 @@ public class BookListServlet extends HttpServlet {
 		try {
 			if (bookList!=null) {
 
-
 				session.setAttribute("bookList",bookList);
 				url = "book-list.jsp"; //図書一覧へ
 
