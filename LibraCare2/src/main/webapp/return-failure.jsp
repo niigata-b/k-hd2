@@ -5,6 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>返却失敗画面</title>
+<style>
+body {
+text-align:center;
+}
+</style>
 </head>
 <body>
 <h1>貸出・返却管理</h1>

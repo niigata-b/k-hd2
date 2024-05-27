@@ -5,6 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>貸出登録確定画面</title>
+<style>
+body {
+text-align:center;
+}
+</style>
 </head>
 <body>
 <%

@@ -5,6 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>貸出中情報未登録画面</title>
+<style>
+body {
+text-align:center;
+}
+</style>
 </head>
 <body>
 <form action ="lendinglist" method="POST">
