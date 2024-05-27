@@ -103,7 +103,7 @@ public class BookDAO {
 			pstmt.setInt(4, book.getBookCount());
 			pstmt.setInt(5, book.getTotalBookCount());
 			
-			count = pstmt.executeUpdate();
+			count = pstmt.executeUpdate();//わお
 		}
 		return count;
 	}
