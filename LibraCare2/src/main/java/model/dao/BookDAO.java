@@ -41,8 +41,7 @@ public class BookDAO {
 		return bookList;
 
 	}
-
-
+	
 	public BookBean detail(String isbn) throws SQLException,ClassNotFoundException{ 
 		BookBean book = new BookBean();
 
@@ -66,7 +65,6 @@ public class BookDAO {
 			}
 		} 
 		return book;
-
 	} 
 
 } 
