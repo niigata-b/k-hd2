@@ -22,11 +22,11 @@
 		</tr>
   	
   	<tr>
-	<td>ISBN<%=bookdetail.getIsbn() %></td>
-	<td>図書名<%=bookdetail.getBookName() %></td>
-	<td>カテゴリ名<%=bookdetail.getCategoryName() %></td>
-	<td>個数<%=bookdetail.getBookCount() %><td>
-	<td>貸出中フラグ<%=bookdetail.getLendingFlag() %></td> 
+	<td><%=bookdetail.getIsbn() %></td>
+	<td><%=bookdetail.getBookName() %></td>
+	<td><%=bookdetail.getCategoryName() %></td>
+	<td><%=bookdetail.getBookCount() %><td>
+	<td><%=bookdetail.getLendingFlag() %></td> 
 	</tr> 
 	</table>
 
@@ -37,7 +37,7 @@
 	<form action="book-delete.jsp">
 		<input type="submit" value="図書詳細情報削除">
 	</form>
-	<form action="bookdetailservlet" method="post">
+	<form action="bookdetail" method="post">
 		<input type="submit" value="図書一覧画面に戻る">
 	</form>
 </body>
