@@ -18,6 +18,10 @@ public class BookBean implements Serializable{
 	
 	private String lending_flag; 
 	
+	private int huyasu;
+	
+	private int herasu;
+	
 	public  BookBean() {}
 
 	public String getIsbn() {
@@ -74,6 +78,22 @@ public class BookBean implements Serializable{
 
 	public void setLendingFlag(String lending_flag) {
 		this.lending_flag = lending_flag;
-	};
+	}
+	
+	public int getHuyasu() {
+		return huyasu;
+	}
+	
+	public void setHuyasu(int huyasu) {
+		this.huyasu = huyasu;
+	}
+	
+	public int getHerasu() {
+		return herasu;
+	}
+	
+	public void setHerasu(int herasu) {
+		this.herasu = herasu;
+	}
 
 }

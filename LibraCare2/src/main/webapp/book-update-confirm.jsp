@@ -4,9 +4,31 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>図書個数変更確認画面</title>
 </head>
 <body>
+<%
+	BookBean book = (BookBean)request.getAttribute("book");
+%>
+<h2>図書管理</h2>
+<h1>図書個数変更確認画面</h1>
+以下の内容で変更します。<br>
+よろしいですか？
 
+<form action ="loan" method="POST">
+ISBN：<input type="text" name ="user_id" value="<%=lending.getUserId() %>" readonly><br>
+図書名：<input type="text" name ="isbn" value="<%=lending.getIsbn() %>" readonly><br>
+個数：<input type="text" name ="lending_count" value="<%=lending.getLendingCount() %>" readonly><br>
+から
+<% 
+if(book.getHuyasu != 0) {
+%>
+<input type="text" name ="huyasu" value ="<%=book.getHuyasu() %>">個増やします。
+<%
+} else if(book.getHerasu != 0)
+%>
+
+<input type ="submit" value="貸出登録確定">
+</form>
 </body>
 </html>
