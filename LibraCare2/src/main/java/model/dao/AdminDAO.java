@@ -3,6 +3,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import model.entity.AdminBean;
 
 public class AdminDAO{
 	
@@ -30,5 +35,32 @@ public class AdminDAO{
 	}
 
 
-    }
+	public List<AdminBean> selectAll() throws SQLException, ClassNotFoundException {
+
+		List<AdminBean> adminList = new ArrayList<AdminBean>();
+
+		try (Connection con = ConnectionManager.getConnection();
+				Statement stmt = con.createStatement();
+				ResultSet res = stmt.executeQuery("SELECT * FROM admin")) {
+
+			// 結果の操作
+			while (res.next()) {
+				String admin_id = res.getString("admin_id");
+				String admin_name = res.getString("admin_name");
+				String password = res.getString("password");
+
+				AdminBean admin = new AdminBean();
+				admin.setAdmin_id(admin_id);
+				admin.setAdmin_name(admin_name);
+				admin.setPassword(password);
+				
+
+				adminList.add(admin);
+			}
+		}
+		return adminList;
+
+	}
+
+}
 
