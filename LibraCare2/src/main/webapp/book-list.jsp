@@ -8,11 +8,11 @@
 </head>
 <body>
 	<h2>図書一覧</h2>
-	<form action="bookserchservlet" method="post">
+	<form action="bookserch" method="post">
 		図書名検索<input type="text" name="book_name"> <input type="submit"
 			value="検索">
 	</form>
-	<form action="categoryserchservlet" method="post">
+	<form action="categoryserch" method="post">
 		カテゴリ検索<input type="text" name="category_name"> <input
 			type="submit" value="検索">
 	</form>

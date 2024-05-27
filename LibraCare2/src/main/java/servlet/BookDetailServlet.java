@@ -45,13 +45,11 @@ public class BookDetailServlet extends HttpServlet {
 		
 		String url = null;   
 		
-		
-		
 		BookDAO dao = new BookDAO();
 		try { 
 			
 			BookBean bookDetail = dao.detail(isbn);
-			if (request.getAttribute("isbn")!=null) {
+			if (bookDetail!=null) {
 
 				url = "book-detail.jsp"; //図書詳細画面へ 
 				request.setAttribute("bookDetail", bookDetail);
