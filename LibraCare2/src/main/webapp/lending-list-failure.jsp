@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>貸出中情報未登録画面</title>
 </head>
 <body>
-
+<form action ="lendinglist" method="POST">
+<input type ="submit" value="貸出情報一覧画面に戻る">
+</form>
 </body>
 </html>
