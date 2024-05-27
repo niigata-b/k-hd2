@@ -56,6 +56,7 @@ public class BookUpdateFormServlet extends HttpServlet {
 		book.setLendingFlag(lending_flag);
 
 		request.setAttribute("book", book);
+		// afeieg
 
 		// リクエストの転送
 		RequestDispatcher rd = request.getRequestDispatcher("book-update.jsp");
