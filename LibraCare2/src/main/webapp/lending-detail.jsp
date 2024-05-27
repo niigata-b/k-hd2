@@ -15,7 +15,7 @@ text-align: center;
 <%
 	LendingBean lending = (LendingBean)request.getAttribute("lending");
 %>
-<h1>貸出・返却管理</h1>
+<h2>貸出・返却管理</h2>
 <h1>貸出中情報詳細画面</h1>
 ISBN：<%=lending.getIsbn() %><br>
 図書名：<%=lending.getBookName() %><br>

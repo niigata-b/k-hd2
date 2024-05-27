@@ -12,7 +12,7 @@ text-align: center;
 </style>
 </head>
 <body>
-<h1>貸出返却管理</h1>
+<h2>貸出返却管理</h2>
 <h1>貸出返却メニュー画面</h1>
 <form action = "lendinglist" method = "POST">
 <input type = "submit" value = "貸出中情報一覧">

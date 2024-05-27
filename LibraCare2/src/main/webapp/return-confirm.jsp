@@ -15,7 +15,7 @@ text-align: center;
 <%
 	LendingBean lending = (LendingBean)request.getAttribute("lending");
 %>
-<h1>貸出・返却管理</h1>
+<h2>貸出・返却管理</h2>
 <h1>返却確認画面</h1>
 以下の図書を返却します。
 よろしいですか？

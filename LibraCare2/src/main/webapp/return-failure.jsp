@@ -12,7 +12,7 @@ text-align:center;
 </style>
 </head>
 <body>
-<h1>貸出・返却管理</h1>
+<h2>貸出・返却管理</h2>
 <h1>返却失敗画面</h1>
 返却に失敗しました。
 <form action ="lendingdetail" method="POST">

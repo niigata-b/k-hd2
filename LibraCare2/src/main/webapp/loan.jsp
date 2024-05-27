@@ -44,7 +44,7 @@ text-align:center;
 		lending_count = 1;
 	}
 %>
-<h1>貸出・返却管理</h1>
+<h2>貸出・返却管理</h2>
 <h1>貸出登録画面</h1>
 <form action ="loanconfirm" method="POST">
 <%
