@@ -44,7 +44,8 @@ request.setCharacterEncoding("UTF-8");
 		String isbn = request.getParameter("isbn");
 		String book_name = request.getParameter("book_name");
 		String category_name = request.getParameter("category_name");
-		int book_count = 1;
+		
+		int book_count = Integer.parseInt(request.getParameter("book_count"));
 		
 		
 		String url = "book-delete-confirm.jsp";

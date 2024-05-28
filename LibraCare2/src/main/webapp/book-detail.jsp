@@ -41,7 +41,11 @@ text-align:center;
 		<input type="hidden" name ="lending_flag" value="<%=bookdetail.getLendingFlag() %>">
 		<input type="submit" value="図書詳細情報変更">
 	</form>
-	<form action="book-delete.jsp" metohd ="POST">
+	<form action="bookdeleteconfirm" method ="POST">
+		<input type="hidden" name ="isbn" value="<%=bookdetail.getIsbn() %>">
+		<input type="hidden" name ="book_name" value="<%=bookdetail.getBookName() %>">
+		<input type="hidden" name ="category_name" value="<%=bookdetail.getCategoryName() %>">
+		<input type="hidden" name ="book_count" value="<%=bookdetail.getBookCount() %>">
 		<input type="submit" value="図書詳細情報削除">
 	</form>
 	<form action="booklist" method="POST">

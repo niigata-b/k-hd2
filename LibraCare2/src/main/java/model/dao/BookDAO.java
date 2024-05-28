@@ -92,7 +92,7 @@ public class BookDAO {
 	}
 
 	public int bookdelete(BookBean book) throws SQLException, ClassNotFoundException {
-		String sql = "delete from book where isbn = ? book_name = ? category_name = ? book_count = ? book_total_count = ?";
+		String sql = "delete from book where isbn = ?";
 		int count = 0;
 		// データベースへの接続の取得、Statementの取得、SQLステートメントの実行
 		try (Connection con = ConnectionManager.getConnection();
@@ -100,10 +100,6 @@ public class BookDAO {
 
 			// ?に値を格納
 			pstmt.setString(1, book.getIsbn());
-			pstmt.setString(2, book.getBookName());
-			pstmt.setString(3, book.getCategoryName());
-			pstmt.setInt(4, book.getBookCount());
-			pstmt.setInt(5, book.getTotalBookCount());
 
 			count = pstmt.executeUpdate();//わお
 		}

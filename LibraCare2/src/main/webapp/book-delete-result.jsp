@@ -25,8 +25,8 @@ ISBN：<%=book.getIsbn() %><br>
 カテゴリ名：<%=book.getCategoryName() %><br>
 個数：<%=book.getBookCount() %><br>
 
-<form action ="bookdetail" method="POST">
-<input type ="submit" value="図書登録画面に戻る">
+<form action ="booklist" method="POST">
+<input type ="submit" value="図書一覧画面に戻る">
 </form>
 </body>
 </html>

@@ -12,7 +12,7 @@
 %>
 <h1>図書管理</h1>
 <h1>削除確認画面</h1>
-以下の図書を返却します。
+以下の図書情報を削除します
 よろしいですか？
 <form action ="bookdelete" method="POST">
 ISBN			:<input type ="label" name ="isbn" value="<%=book.getIsbn() %>" readonly><br>
