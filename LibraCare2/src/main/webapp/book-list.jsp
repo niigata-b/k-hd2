@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<title>Insert title here</title>
 <style>
 body {
 	text-align: center;
@@ -17,22 +18,51 @@ table {
 	margin-left: 500px;
 }
 </style>
-<title>図書一覧画面</title>
 </head>
-<body>
-<h2>図書管理</h2>
-	<h1>図書一覧画面</h1>
-	<form action="bookserchservlet" method="post">
-		図書名検索<input type="text" name="book_name"> <input type="submit"
-			value="検索">
+<body> 
+<%
+	List<BookBean> bookList = (List<BookBean>) request.getAttribute("bookList");
+ 	BookBean bs = (BookBean)request.getAttribute("book");
+	String message = (String) request.getAttribute("message"); 
+	
+	String book_name = "";
+
+	try
+	{
+		book_name =bs.getBookName();
+	}
+	catch(NullPointerException e)
+	{
+		book_name = "";
+	}
+	
+%>
+<%
+try {
+if(!(message.equals(null))) {
+%>
+
+<%=message %><br>
+
+<%
+}
+
+}catch(NullPointerException e)
+{
+
+}
+%>
+
+	<h2>図書一覧</h2>
+	<form action="booksearch" method="post">
+		図書名検索 <input type="search" name="book_name" value="<%=book_name%>">  
+		<input type="submit" value="検索">
 	</form>
 	<form action="categoryserchservlet" method="post">
-		カテゴリ検索<input type="text" name="category_name"> <input
-			type="submit" value="検索">
+		カテゴリ検索<input type="search" name="category_name">  
+		<input type="submit" value="検索">
 	</form>
-	<% 
-	List<BookBean> bookList =(List<BookBean>) request.getAttribute("bookList");  
-	%>
+	
 	<table border="1">
 		<tr>
 			<th>ISBN</th>
@@ -42,22 +72,25 @@ table {
 			<th>貸出中フラグ</th>
 			<th></th>
 		</tr>
-		<% 
-		for(BookBean book : bookList){  
+		<%
+		for (BookBean book : bookList) {
 		%>
 		<tr>
-			<td><%=book.getIsbn() %></td>
-			<td><%=book.getBookName() %></td>
-			<td><%=book.getCategoryName() %></td>
-			<td><%=book.getBookCount() %></td>
-			<td><%=book.getLendingFlag() %></td>
-			<td> 
-			<form action="bookdetail" method="post">
-					<input type="hidden" name="isbn" value="<%=book.getIsbn() %>">
+			<td><%=book.getIsbn()%></td>
+			<td><%=book.getBookName()%></td>
+			<td><%=book.getCategoryName()%></td>
+			<td><%=book.getBookCount()%></td>
+			<td><%=book.getLendingFlag()%></td>
+			<td>
+				<form action="bookdetail" method="post">
+					<input type="hidden" name="isbn" value="<%=book.getIsbn()%>">
 					<input type="submit" value="詳細">
-				</form></td>
+				</form>
+			</td>
 		</tr>
-		<%} %>
+		<%
+		}
+		%>
 	</table>
 	<form action="category-insert.jsp">
 		<input type="submit" value="カテゴリー登録">
