@@ -64,7 +64,14 @@ public class BookInsertConfirmServlet extends HttpServlet {
 		{
 			System.out.println("aaa");
 			messageNull = "入力内容に不備があります";
-			url = "book-insert-confirm.jsp";
+			url = "book-insert.jsp";
+			request.setAttribute("messageNull",messageNull);
+		}
+		else if(category_name.equals(""))
+		{
+			System.out.println("bbbb");
+			messageNull = "入力内容に不備があります";
+			url = "book-insert.jsp";
 			request.setAttribute("messageNull",messageNull);
 		}
 		
@@ -75,7 +82,7 @@ public class BookInsertConfirmServlet extends HttpServlet {
 		catch(NumberFormatException e)
 		{
 			messageNum = "数字を入力してください。";
-			url = "book-insert-confirm.jsp";
+			url = "book-insert.jsp";
 			request.setAttribute("messageNum",messageNum);
 		}
 
@@ -90,7 +97,7 @@ public class BookInsertConfirmServlet extends HttpServlet {
 		
 		if(cancel == 1)
 		{
-			url = "book-insert-confirm.jsp";
+			url = "book-insert.jsp";
 		}
 
 		// リクエストの転送

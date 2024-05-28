@@ -19,14 +19,14 @@ import model.entity.BookBean;
 @WebServlet("/bookinsert")
 public class BookInsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public BookInsertServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public BookInsertServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -41,15 +41,14 @@ public class BookInsertServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+
 		request.setCharacterEncoding("UTF-8");
 
 		String isbn = request.getParameter("isbn");
 		String book_name = request.getParameter("book_name");
 		String category_name = request.getParameter("category_name");
-		int book_count = 1;
-		int total_book_count = 1;
-		
+		int book_count = Integer.parseInt(request.getParameter("book_count"));
+
 		String url = null;
 		int count = 0;
 
@@ -60,27 +59,28 @@ public class BookInsertServlet extends HttpServlet {
 		book.setBookName(book_name);
 		book.setCategoryName(category_name);
 		book.setBookCount(book_count);
-		book.setTotalBookCount(total_book_count);
+
+		// リクエストスコープへの属性の設定
+		request.setAttribute("book", book);
 		
 		try {
 			// DAOの利用
 			count = dao.bookinsert(book);
-
-			// リクエストスコープへの属性の設定
-			request.setAttribute("book", book);
-
-			if(count != 0)
-			{
-				url = "book-insert-result.jsp";
-			}
-			else
-			{
-				url = "book-insert-failure.jsp";
-			}
-
+			
 		}catch (SQLException | ClassNotFoundException e) {
-			e.printStackTrace();
+			url = "book-insert-failure.jsp";
 		}
+
+		if(count != 0)
+		{
+			url = "book-insert-result.jsp";
+		}
+		else
+		{
+			url = "book-insert-failure.jsp";
+		}
+
+
 
 		// リクエストの転送
 		RequestDispatcher rd = request.getRequestDispatcher(url);

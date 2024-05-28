@@ -4,7 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>ログアウト画面</title>
+<style>
+body {
+text-align:center;
+}
+</style>
 </head>
 <body>
 <h1>ログアウトしました</h1>

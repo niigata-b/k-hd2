@@ -84,7 +84,7 @@ public class BookDAO {
 			pstmt.setString(2, book.getBookName());
 			pstmt.setString(3, book.getCategoryName());
 			pstmt.setInt(4, book.getBookCount());
-			pstmt.setInt(5, book.getTotalBookCount());
+			pstmt.setInt(5, book.getBookCount());
 
 			count = pstmt.executeUpdate();
 		}

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>図書情報登録確認画面</title>
 </head>
 <body>
 <%
@@ -20,8 +20,7 @@
 図書名：<input type="text" name ="book_name" value="<%=book.getBookName() %>" readonly><br>
 カテゴリ名：<input type="text" name ="category_name" value="<%=book.getCategoryName() %>" readonly><br>
 個数：<input type="text" name ="book_count" value="<%=book.getBookCount() %>" readonly><br>
-
-<input type ="submit" value="貸出登録確定">
+<input type ="submit" value="図書登録確定">
 </form>
 
 <form action ="bookinsertconfirm" method="POST">

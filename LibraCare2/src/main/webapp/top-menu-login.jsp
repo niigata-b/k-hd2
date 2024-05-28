@@ -4,10 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>ログイン画面</title>
+<style>
+body {
+text-align:center;
+}
+</style>
 </head>
 <body>
-
+<h1>LibraCare</h1>
 	<%
 	String loginFailureMessage = (String) request.getAttribute("loginFailureMessage");
 	%>

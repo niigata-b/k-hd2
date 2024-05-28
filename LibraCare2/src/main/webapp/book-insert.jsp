@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>図書登録画面</title>
 </head>
 <body>
 <%
-	BookBean book = (BookBean)request.getAttribute("lending");
+	BookBean book = (BookBean)request.getAttribute("book");
 	String messageNum = (String)request.getAttribute("messageNum");
 	String messageNull = (String)request.getAttribute("messageNull");
 	String isbn = "";
@@ -34,7 +34,7 @@
 	}
 	try
 	{
-		category_name = book.CategoryName();
+		category_name = book.getCategoryName();
 	}
 	catch(NullPointerException e)
 	{
@@ -44,14 +44,13 @@
 	{
 		book_count = 1;
 	}
-	catch
+	catch(NullPointerException e)
 	{
 		book_count = 1;
 	}
 %>
 <h1>図書管理</h1>
 <h1>図書情報登録画面</h1>
-<form action ="bookinsertconfirm" method="POST">
 <%
 try {
 if(!(messageNull.equals(null))) {
@@ -67,6 +66,23 @@ if(!(messageNull.equals(null))) {
 	
 }
 %>
+<%
+try {
+if(!(messageNum.equals(null))) {
+%>
+
+<%=messageNum %><br>
+
+<%
+}
+
+}catch(NullPointerException e)
+{
+	
+}
+%>
+
+<form action ="bookinsertconfirm" method="POST">
 ISBN
 <input type="text" name="isbn" value ="<%=isbn%>"><br>
 図書名
