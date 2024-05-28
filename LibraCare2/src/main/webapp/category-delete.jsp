@@ -6,7 +6,19 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
-
+<body> 
+	<% List<BookBean> categoryList = (List<BookBean>) request.getAttribute("categoryList");  
+	%>
+	<h2>消去するカテゴリー名を選択してください</h2> 
+	<form action="categorydelete" method="post"> 
+	<select name="category_name"> 
+	 
+	<%for (BookBean book : categoryList){ %>  
+	<option value="<%=category_name %>"</option>  
+	<%} %>
+	</select> 
+	</form> 
+	<input type="submit" value="カテゴリー名削除"> 
+	
 </body>
 </html>

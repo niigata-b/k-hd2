@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,16 +15,16 @@ import model.dao.CategoryDAO;
 import model.entity.BookBean;
 
 /**
- * Servlet implementation class CategoryDeleteServlet
+ * Servlet implementation class CategoryDeleteList
  */
-@WebServlet("/categorydelete")
-public class CategoryDeleteServlet extends HttpServlet {
+@WebServlet("/categorydeletelist")
+public class CategoryDeleteList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CategoryDeleteServlet() {
+    public CategoryDeleteList() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,41 +41,38 @@ public class CategoryDeleteServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8"); 
-		
-		String category_name = request.getParameter("category_name"); 
+	request.setCharacterEncoding("UTF-8");
 
-		int count =0;
 		
-		String url =null;
-		BookBean book = new BookBean(); 
-		book.setCategoryName(category_name); 
+		
+		String url = "categorydeleteform.jsp";
+		
+		List<BookBean> categoryList = null;
+		
+		CategoryDAO dao = new CategoryDAO(); 
+		
+				try {
+					categoryList = dao.categoryAll();
+				} catch (ClassNotFoundException e) {
+					// TODO 自動生成された catch ブロック
+					e.printStackTrace();
+				} catch (SQLException e) {
+					// TODO 自動生成された catch ブロック
+					e.printStackTrace();
+				}
+		
 
-		CategoryDAO dao = new CategoryDAO();  
-		
-		
-			try {
-				count = dao.categoryDelete(book);
-			} catch (ClassNotFoundException e) {
-				// TODO 自動生成された catch ブロック
-				e.printStackTrace();
-			} catch (SQLException e) {
-				// TODO 自動生成された catch ブロック
-				e.printStackTrace();
-			}
-	
-			if(count!=0) { 
-				url="categorydeleteresult.jsp";
-			}
-		
-		request.setAttribute("book", book);
+			
+			request.setAttribute("categoryList",categoryList);
 
+		
+
+		// リクエストの転送
 		RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);
-
-	
+	}
 
 
 	}
 
-}
+
