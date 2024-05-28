@@ -13,7 +13,7 @@ text-align:center;
 </head>
 <body>
 <h1>ログアウトしました</h1>
-
+<!-- aa -->
 <form action ="top-menu-login.jsp" method="post">
 	<input type = "submit" value = "ログイン">
 </form>

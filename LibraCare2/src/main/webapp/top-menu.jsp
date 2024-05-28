@@ -12,6 +12,7 @@ text-align:center;
 </style>
 </head>
 <body>
+<!-- aa -->
 	<h1>LibraCare</h1>
 	<form action="admin-management-menu.jsp" method="post">
 		<input type="submit" value="管理者管理メニュー">

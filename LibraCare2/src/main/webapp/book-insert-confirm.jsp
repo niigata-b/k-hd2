@@ -11,7 +11,7 @@
 	BookBean book = (BookBean)request.getAttribute("book");
 %>
 <h1>図書管理</h1>
-<h1>図書情報登録確認画面</h1>
+<h1>図書情報登録確認画面あ</h1>
 以下の内容で登録します。<br>
 よろしいですか？
 
