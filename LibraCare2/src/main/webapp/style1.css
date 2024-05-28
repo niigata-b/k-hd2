@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+body {
+	text-align: center;
+}
+
+h1 {
+	font-size: 50px;
+}
+
+#logout {
+  width: 200px;
+  padding: 3px 7px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+}

@@ -5,15 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>LibraCare</title>
-<style>
-body {
-text-align:center;
-}
-</style>
+<link rel="stylesheet" href="style1.css">
 </head>
 <body>
 <!-- aa -->
 	<h1>LibraCare</h1>
+	<form action="logout" method="post">
+		<input type="submit" value="ログアウト" id ="logout">
+	</form>
+	
 	<form action="admin-management-menu.jsp" method="post">
 		<input type="submit" value="管理者管理メニュー">
 	</form>
@@ -30,9 +30,7 @@ text-align:center;
 		<input type="submit" value="貸出・返却管理メニュー">
 	</form>
 
-	<form action="logout" method="post">
-		<input type="submit" value="ログアウト">
-	</form>
+	
 
 </body>
 </html>
