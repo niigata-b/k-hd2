@@ -25,14 +25,15 @@ ISBN：<input type="text" name ="user_id" value="<%=book.getIsbn() %>" readonly>
 <% 
 if(book.getHuyasu() != 0) {
 %>
-<input type="text" name ="huyasu" value ="<%=book.getHuyasu() %>">個増やしました。
+<input type="text" name ="huyasu" value ="<%=book.getHuyasu() %>">個増やしました。<br>
 <%
 } else if(book.getHerasu() != 0) {
 %>
-<input type="text" name ="herasu" value ="<%=book.getHerasu() %>">個減らしました。
+<input type="text" name ="herasu" value ="<%=book.getHerasu() %>">個減らしました。<br>
 <%
 }
 %>
+<br>
 <form action ="bookdetail" method ="POST">
 <input type ="hidden" name ="isbn" value ="<%=book.getIsbn() %>">
 <input type ="submit" value="図書詳細画面に戻る">
