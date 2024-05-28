@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>図書情報登録失敗画面</title>
 </head>
 <body>
 <%

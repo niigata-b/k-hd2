@@ -4,9 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>削除失敗画面</title>
 </head>
 <body>
-
+<h1>図書管理</h1>
+<h1>削除失敗画面</h1>
+図書情報削除出来ませんでした。
+<form action ="bookdetail" method="POST">
+<input type="hidden" name ="isbn" value ="<%=book.getIsbn() %>">
+<input type="hidden" name ="book_name" value ="<%=book.getBookName() %>">
+<input type="hidden" name ="category_name" value ="<%=book.getCategoryName() %>">
+<input type="hidden" name ="book_count" value ="<%=book.getBookCount() %>">
+<input type ="submit" value="貸出情報詳細画面に戻る">
 </body>
 </html>
