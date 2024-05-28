@@ -142,7 +142,8 @@ public class BookDAO {
 				bookbean.setBookCount(book_count);
 				bookbean.setLendingFlag(lending_flag);
 
-				// Beanをリストに格納
+				//変更しちゅ
+				
 				bookList.add(bookbean);
 			}
 			// リストを戻す
