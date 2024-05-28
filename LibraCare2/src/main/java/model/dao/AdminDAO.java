@@ -1,4 +1,5 @@
 package model.dao;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,15 +10,17 @@ import java.util.List;
 
 import model.entity.AdminBean;
 
-public class AdminDAO{
-	
+
+
+public class AdminDAO {
+
 	public boolean loginCheck(String admin_id, String password) throws ClassNotFoundException, SQLException {
 
 		String sql = "SELECT * FROM admin WHERE admin_id = ? AND password = ?";
 
 		// データベースへの接続の取得、PreparedStatementの取得
-		try(Connection con = ConnectionManager.getConnection();
-				PreparedStatement pstmt =  con.prepareStatement(sql)){
+		try (Connection con = ConnectionManager.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)) {
 
 			// プレースホルダへの値の設定
 			pstmt.setString(1, admin_id);
@@ -27,14 +30,15 @@ public class AdminDAO{
 			ResultSet res = pstmt.executeQuery();
 
 			// 結果の操作
-			if(res.next()) {
+			if (res.next()) {
 				return true;
 			}
 		}
 		return false;
 	}
 
-
+	
+	
 	public List<AdminBean> selectAll() throws SQLException, ClassNotFoundException {
 
 		List<AdminBean> adminList = new ArrayList<AdminBean>();
@@ -61,6 +65,24 @@ public class AdminDAO{
 		return adminList;
 
 	}
+	public int admininsert(AdminBean admin) throws SQLException, ClassNotFoundException {
+		String sql = "insert into admin (admin_id,admin_name,password) "
+				+ "values(?,?,?)";
+				
+		int count = 0;
+		// データベースへの接続の取得、Statementの取得、SQLステートメントの実行
+		try (Connection con = ConnectionManager.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)){
+
+			// ?に値を格納
+			pstmt.setString(1, admin.getAdmin_id());
+			pstmt.setString(2, admin.getAdmin_name());
+			pstmt.setString(3, admin.getPassword());
+
+			
+			count = pstmt.executeUpdate();
+		}
+		return count;
+	}
 
 }
-
