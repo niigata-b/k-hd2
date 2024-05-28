@@ -4,7 +4,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
 <style>
 body {
 	text-align: center;
@@ -18,10 +17,11 @@ table {
 	margin-left: 500px;
 }
 </style>
-</head>
+<title>図書一覧画面</title>
 </head>
 <body>
-	<h2>図書一覧</h2>
+<h2>図書管理</h2>
+	<h1>図書一覧画面</h1>
 	<form action="bookserchservlet" method="post">
 		図書名検索<input type="text" name="book_name"> <input type="submit"
 			value="検索">
@@ -65,7 +65,7 @@ table {
 	<form action="category-delete.jsp">
 		<input type="submit" value="カテゴリー削除">
 	</form>
-	<form action="book-list.jsp" method="post">
+	<form action="book-menu.jsp" method="post">
 		<input type="submit" value="図書管理メニューに戻る">
 	</form>
 

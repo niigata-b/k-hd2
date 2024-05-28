@@ -5,10 +5,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>図書管理メニュー</title>
+<style>
+body {
+text-align:center;
+}
+</style>
 </head>
 <body>
-	<h2>図書管理メニュー</h2>
+	<h2>図書管理</h2>
+	<h1>図書管理メニュー</h1>
 	<form action="booklist" method="post">
 		<input type="submit" value="図書一覧">
 	</form>

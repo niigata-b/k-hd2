@@ -18,6 +18,10 @@ text-align:center;
 <h2>貸出・返却管理</h2>
 <h1>貸出登録失敗画面</h1>
 以下の内容の登録に失敗しました。<br>
+ユーザーID：<%=lending.getUserId() %><br>
+ISBN：<%=lending.getIsbn() %><br>
+貸出個数：<%=lending.getLendingCount() %><br>
+
 <form action = "loanconfirm" method="POST">
 <input type="hidden" name ="user_id" value ="<%=lending.getUserId() %>">
 <input type="hidden" name ="isbn" value ="<%=lending.getIsbn() %>">

@@ -16,7 +16,7 @@
 よろしいですか？
 
 <form action ="bookupdate" method="POST">
-ISBN：<input type="text" name ="user_id" value="<%=book.getIsbn() %>" readonly><br>
+ISBN：<input type="text" name ="isbn" value="<%=book.getIsbn() %>" readonly><br>
 図書名：<input type="text" name ="book_name" value="<%=book.getBookName() %>" readonly><br>
 個数：<input type="text" name ="book_count" value="<%=book.getBookCount() %>" readonly><br>
 から

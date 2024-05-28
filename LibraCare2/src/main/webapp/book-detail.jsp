@@ -4,35 +4,33 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>図書詳細画面</title>
+<style>
+body {
+text-align:center;
+}
+</style>
 </head>
 <body>
-	<h2>図書詳細画面</h2>
+	<h2>図書管理</h2>
+	<h1>図書詳細画面</h1>
 	<% 
 	BookBean bookdetail = (BookBean) request.getAttribute("bookDetail");
 	%> 
-	<table border="1">
-		<tr>
-			<th>ISBN</th>
-			<th>図書名</th>
-			<th>カテゴリー名</th>
-			<th>個数</th>
-			<th>総個数</th>
-			<th>総貸出個数</th>
-			<th>貸出中フラグ</th>
-			<th></th>
-		</tr>
-  	
-  	<tr>
-	<td><%=bookdetail.getIsbn() %></td>
-	<td><%=bookdetail.getBookName() %></td>
-	<td><%=bookdetail.getCategoryName() %></td>
-	<td><%=bookdetail.getBookCount() %><td>
-	<td><%=bookdetail.getTotalBookCount() %><td>
-	<td><%=bookdetail.getTotalLendingCount() %><td>
-	<td><%=bookdetail.getLendingFlag() %></td> 
-	</tr> 
-	</table>
+	ISBN：
+	<%=bookdetail.getIsbn() %><br>
+	図書名：
+	<%=bookdetail.getBookName() %><br>
+	カテゴリー名：
+	<%=bookdetail.getCategoryName() %><br>
+	個数：
+	<%=bookdetail.getBookCount() %><br>
+	総個数：
+	<%=bookdetail.getTotalBookCount() %><br>
+	総貸出個数：
+	<%=bookdetail.getTotalLendingCount() %><br>
+	貸出中フラグ：
+	<%=bookdetail.getLendingFlag() %> <br>
 
 	<form action="bookupdateform" method ="POST">
 		<input type="hidden" name ="isbn" value="<%=bookdetail.getIsbn() %>">

@@ -93,7 +93,7 @@ for(int i = 1; i < 4; i++) {
 <%
 }
 %>
-</select>
+</select><br>
 <input type="submit"value="貸出登録">
 </form>
 <form action ="lending-return-menu.jsp">

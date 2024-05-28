@@ -14,8 +14,8 @@ text-align:center;
 <body>
 <h2>貸出・返却管理</h2>
 <h1>貸出中情報未登録画面</h1>
-<form action ="lendinglist" method="POST">
-<input type ="submit" value="貸出情報一覧画面に戻る">
+<form action ="lending-return-menu.jsp" method="POST">
+<input type ="submit" value="貸出・返却メニューに戻る">
 </form>
 </body>
 </html>

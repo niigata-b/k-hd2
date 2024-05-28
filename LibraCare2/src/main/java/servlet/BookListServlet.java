@@ -51,6 +51,8 @@ public class BookListServlet extends HttpServlet {
 		BookDAO dao = new BookDAO(); 
 	
 				try {
+					dao.lendingflagtrue();
+					dao.lendingflagfalse();
 					bookList = dao.selectAll();
 				} catch (ClassNotFoundException e) {
 					// TODO 自動生成された catch ブロック

@@ -25,7 +25,7 @@ public class BookDAO {
 				String isbn = res.getString("isbn");
 				String book_name = res.getString("book_name");
 				String category_name = res.getString("category_name"); 
-				int book_count = res.getInt("book_count"); 
+				int book_count = res.getInt("book_count");  
 				String lending_flag = res.getString("lending_flag");
 
 				BookBean book = new BookBean();
@@ -60,6 +60,8 @@ public class BookDAO {
 				book.setBookName(res.getString("book_name"));
 				book.setCategoryName(res.getString("category_name"));
 				book.setBookCount(res.getInt("book_count"));
+				book.setTotalBookCount(res.getInt("total_book_count")); 
+				book.setTotalLendingCount(res.getInt("total_lending_count"));
 				book.setLendingFlag(res.getString("lending_flag")); 
 
 
@@ -150,24 +152,25 @@ public class BookDAO {
 
 	public int bookhuyasu(BookBean book) throws SQLException, ClassNotFoundException {
 
-		String sql = "update book set book_count = book_count + ? where isbn = ?";
+		String sql = "update book set book_count = book_count + ?, total_book_count = total_book_count + ? where isbn = ?";
 		int count = 0;
 		// データベースへの接続の取得、Statementの取得、SQLステートメントの実行
 		try (Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
 
-			pstmt.setInt(1, book.getBookCount());
-			pstmt.setString(2, book.getIsbn());
+			pstmt.setInt(1, book.getHuyasu());
+			pstmt.setInt(2, book.getHuyasu());
+			pstmt.setString(3, book.getIsbn());
 
 			count = pstmt.executeUpdate();
-			
+			System.out.println("huyasu"+count);
 		}
 		return count;
 	}
 
 	public int bookherasu(BookBean book) throws SQLException, ClassNotFoundException {
 
-		String sql = "update book set book_count = book_count - ? where isbn = ?";
+		String sql = "update book set book_count = book_count - ?, total_book_count = total_book_count - ? where isbn = ?";
 		int count = 0;
 		// データベースへの接続の取得、Statementの取得、SQLステートメントの実行
 		try (Connection con = ConnectionManager.getConnection();
@@ -175,13 +178,36 @@ public class BookDAO {
 
 			if(book.getBookCount() >= book.getHerasu())
 			{
-				pstmt.setInt(1, book.getBookCount());
-				pstmt.setString(2, book.getIsbn());
+				pstmt.setInt(1, book.getHerasu());
+				pstmt.setInt(2, book.getHerasu());
+				pstmt.setString(3, book.getIsbn());
 
 				count = pstmt.executeUpdate();
 			}
 		}
 		return count;
+	}
+
+	public void lendingflagtrue() throws SQLException, ClassNotFoundException {
+		String sql = "update book set lending_flag = '〇' where book_count < total_book_count";
+		
+		// データベースへの接続の取得、Statementの取得、SQLステートメントの実行
+		try (Connection con = ConnectionManager.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)){
+
+			pstmt.executeUpdate();
+		}
+	}
+	
+	public void lendingflagfalse() throws SQLException, ClassNotFoundException {
+		String sql = "update book set lending_flag = '-' where book_count = total_book_count";
+		
+		// データベースへの接続の取得、Statementの取得、SQLステートメントの実行
+		try (Connection con = ConnectionManager.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)){
+
+			pstmt.executeUpdate();
+		}
 	}
 }
 

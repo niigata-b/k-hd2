@@ -60,25 +60,27 @@ public class LoanServlet extends HttpServlet {
 		try {
 			// DAOの利用
 			book_count = dao.loanCount(lending);
+			//lending = dao.detail(lending);
 			lending.setBookCount(book_count);
-			
+
 			count = dao.loan(lending);
-
-			// リクエストスコープへの属性の設定
-			request.setAttribute("lending", lending);
-
-			if(count != 0)
-			{
-				url = "loan-result.jsp";
-			}
-			else
-			{
-				url = "loan-failure.jsp";
-			}
-
 		}catch (SQLException | ClassNotFoundException e) {
-			e.printStackTrace();
+			url = "loan-failure.jsp";
 		}
+
+		// リクエストスコープへの属性の設定
+		request.setAttribute("lending", lending);
+
+		if(count != 0)
+		{
+			url = "loan-result.jsp";
+		}
+		else
+		{
+			url = "loan-failure.jsp";
+		}
+
+
 
 		// リクエストの転送
 		RequestDispatcher rd = request.getRequestDispatcher(url);

@@ -16,7 +16,7 @@ import model.entity.BookBean;
 /**
  * Servlet implementation class BookUpdateServlet
  */
-@WebServlet("/BookUpdateServlet")
+@WebServlet("/bookupdate")
 public class BookUpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -45,8 +45,21 @@ public class BookUpdateServlet extends HttpServlet {
 		String isbn = request.getParameter("isbn");
 		String book_name = request.getParameter("book_name");
 		int book_count = Integer.parseInt(request.getParameter("book_count"));
-		int huyasu = Integer.parseInt(request.getParameter("huyasu"));
-		int herasu = Integer.parseInt(request.getParameter("herasu"));
+		int huyasu = 0;
+		int herasu = 0;
+		try {
+		huyasu = Integer.parseInt(request.getParameter("huyasu"));
+		} catch(NumberFormatException e)
+		{
+			
+		}
+		try {
+		herasu = Integer.parseInt(request.getParameter("herasu"));
+		} catch(NumberFormatException e)
+		{
+			
+		}
+		
 		int count = 0;
 		String url = null;
 
