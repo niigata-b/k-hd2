@@ -46,14 +46,14 @@ public class BookInsertConfirmServlet extends HttpServlet {
 		String book_name = request.getParameter("book_name");
 		String category_name = request.getParameter("category_name");
 		int book_count = 1;
-		int total_book_count = 1;
+		
 		int cancel = 0;
 		try {
 			cancel = Integer.parseInt(request.getParameter("cancel"));
 		}
 		catch(NumberFormatException e)
 		{
-			
+			System.out.println("foiwe");
 		}
 		
 		String messageNum;
@@ -62,7 +62,8 @@ public class BookInsertConfirmServlet extends HttpServlet {
 
 		if(isbn.equals("") || book_name.equals(""))
 		{
-			messageNull = "登録する情報を入力してください。";
+			System.out.println("aaa");
+			messageNull = "入力内容に不備があります";
 			url = "book-insert-confirm.jsp";
 			request.setAttribute("messageNull",messageNull);
 		}
@@ -83,7 +84,6 @@ public class BookInsertConfirmServlet extends HttpServlet {
 		book.setBookName(book_name);
 		book.setCategoryName(category_name);
 		book.setBookCount(book_count);
-		book.setTotalBookCount(total_book_count);
 
 		// リクエストスコープへの属性の設定
 		request.setAttribute("book", book);

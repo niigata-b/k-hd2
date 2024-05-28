@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import = "model.entity.BookBean"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -76,30 +76,10 @@ ISBN
 個数
 <input type="text" name="book_count" value ="<%=book_count%>"><br>
 
-<%
-try {
-if(!(messageNum.equals(null))) {
-%>
-
-<%=messageNum %><br>
-
-<%
-}
-
-}catch(NullPointerException e)
-{
-	
-}
-%>
-
-
-<%
-}
-%>
-</select>
 <input type="submit"value="登録">
 </form>
-<form action ="book-menu.jsp">
+
+<form action ="book-menu.jsp" metod ="POST">
 <input type="submit"value="キャンセル">
 </form>
 </body>
