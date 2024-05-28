@@ -66,7 +66,7 @@ public class BookUpdateConfirmServlet extends HttpServlet {
 			url = "book-update.jsp";
 			request.setAttribute("messageNull", messageNull);
 		}
-		
+
 		if(huyasu > 0 && herasu > 0)
 		{
 			System.out.println("dupli");
@@ -87,7 +87,7 @@ public class BookUpdateConfirmServlet extends HttpServlet {
 		int book_count = Integer.parseInt(request.getParameter("book_count"));
 		int total_book_count = Integer.parseInt(request.getParameter("total_book_count"));
 		int cancel = 0;
-		
+
 		try {
 			cancel = Integer.parseInt(request.getParameter("cancel"));
 		}

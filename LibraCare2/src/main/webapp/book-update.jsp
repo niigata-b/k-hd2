@@ -12,6 +12,7 @@
 	String messageNum = (String)request.getAttribute("messageNum");
 	String messageNull = (String)request.getAttribute("messageNull");
 	String messageDupli = (String)request.getAttribute("messageDupli");
+	String messageZero = (String)request.getAttribute("messageZero");
 	int huyasu;
 	int herasu;
 	try
@@ -22,6 +23,7 @@
 	{
 		huyasu = 0;
 	}
+	
 	try
 	{
 		herasu = book.getHerasu();
@@ -30,36 +32,61 @@
 	{
 		herasu = 0;
 	}
-	
 %> 
 
 <h2>図書管理</h2>
 <h1>図書個数変更画面</h1>
-ISBN：<%=book.getIsbn() %>
-図書名：<%=book.getBookName() %>
-個数：<%=book.getBookCount() %>
-総個数：<%=book.getTotalBookCount() %>
+ISBN：<%=book.getIsbn() %><br>
+図書名：<%=book.getBookName() %><br>
+個数：<%=book.getBookCount() %><br>
+総個数：<%=book.getTotalBookCount() %><br>
 
 <%
 try {
-if(!(messageNull.equals(null))) {
-%>
-
-<%=messageNull %><br>
-
-<%
-}
 if(!(messageNum.equals(null))) {
 %>
 
 <%=messageNum %><br>
 
+<%
+}
+}
+catch(NullPointerException e)
+{
+	
+}
+
+try{
+if(!(messageNull.equals(null))) {
+%>
+
+<%=messageNull %><br>
+
 <% 
 }
+}catch(NullPointerException e)
+{
+	
+}
+
+try{
 if(!(messageDupli.equals(null))) {
 %>
 
 <%=messageDupli %><br>
+
+<%
+}
+}catch(NullPointerException e)
+{
+	
+}
+try
+{
+if(!(messageZero.equals(null))) {
+%>
+
+<%=messageZero %><br>
 
 <%
 }
@@ -72,9 +99,9 @@ catch(NullPointerException e)
 
 <form action ="bookupdateconfirm" method ="POST">
 増やす：
-<input type ="text" name="huyasu" value = <%=huyasu %>>
+<input type ="text" name="huyasu" value = <%=huyasu %>><br>
 減らす：
-<input type ="text" name="herasu" value = <%=herasu %>>
+<input type ="text" name="herasu" value = <%=herasu %>><br>
 <input type="hidden" name ="isbn" value="<%=book.getIsbn() %>">
 <input type="hidden" name ="book_name" value="<%=book.getBookName() %>">
 <input type="hidden" name ="book_count" value="<%=book.getBookCount() %>">

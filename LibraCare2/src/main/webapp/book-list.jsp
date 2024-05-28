@@ -28,8 +28,6 @@ table {
 	
 		String message = (String)request.getAttribute("message");
 		
-		
-	<%
 	try {
 	if(!(message.equals(null))) {
 	%>
