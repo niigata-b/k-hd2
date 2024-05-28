@@ -19,7 +19,7 @@
 パスワード：<input type="text" name ="password" value="<%=admin.getPassword() %>" readonly><br>
 
 <form action = "admin-insert.jsp" method = "post">
-<input type = "submit" value = "管理者登録メニューに戻る"＞
+<input type = "submit" value = "管理者登録メニューに戻る">
 </form>
 
 </body>

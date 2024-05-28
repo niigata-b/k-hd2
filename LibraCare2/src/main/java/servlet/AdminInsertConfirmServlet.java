@@ -61,7 +61,7 @@ public class AdminInsertConfirmServlet extends HttpServlet {
 
 
 		
-		if(admin_id.equals("") || admin_name.equals("") || admin_name.equals(""))
+		if(admin_id.equals("") || admin_name.equals("") || password.equals("")||password.length() < 8)
 		{
 			
 			messageNull = "入力内容に不備があります";
