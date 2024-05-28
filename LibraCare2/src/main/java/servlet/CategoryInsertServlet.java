@@ -10,12 +10,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.dao.CategoryDAO;
 import model.entity.BookBean;
 
 /**
  * Servlet implementation class CategoryInsertServlet
  */
-@WebServlet("/CategoryInsertServlet")
+@WebServlet("/categoryinsert")
 public class CategoryInsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -39,36 +40,48 @@ public class CategoryInsertServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8"); 
+		request.setCharacterEncoding("UTF-8");
 
-		String category_name = request.getParameter("category_name"); 
-
-		int count =0;
+		String catefory_name = request.getParameter("category_name");
 		
-		String url =null;
+		String url = null;
+		
+		int count = 0;
+
 		BookBean book = new BookBean(); 
-		book.setCategoryName(category_name); 
-
-		BookDAO dao = new BookDAO;  
+		book.setCategoryName(catefory_name);
 		
-		count = dao.categoryInsert(book);
+		CategoryDAO dao = new CategoryDAO();
 
-		try {
-			if(/*カテゴリーかぶりなし*/) { 
-					request.setAttribute("category_name", category_name);
-					url = "category-insert-confirm.jsp";
-			} else {//被り
-				
+		
+		
+		
+			try {
+				count = dao.categoryInsert(book);
+			} catch (ClassNotFoundException e) {
+				// TODO 自動生成された catch ブロック
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO 自動生成された catch ブロック
+				e.printStackTrace();
+			}
+
+			
+			request.setAttribute("book", book);
+
+			if(count != 0)
+			{
+				url = "category-insert-result.jsp";
+			}
+			else
+			{
 				url = "category-insert-failure.jsp";
-			} 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+			}
 
+
+		// リクエストの転送
 		RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);
-
 	}
 
-} 
-
+}

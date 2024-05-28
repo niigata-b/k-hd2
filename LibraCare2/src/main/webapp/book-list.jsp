@@ -21,36 +21,18 @@ table {
 </head>
 </head>
 <body>
-	<h2>図書一覧</h2> 
-	<%
-		List<BookBean> bookList
-			= (List<BookBean>) request.getAttribute("bookList");
-	
-		String message = (String)request.getAttribute("message");
-		
-	try {
-	if(!(message.equals(null))) {
-	%>
-
-	<%=message %><br>
-
-	<%
-	}
-
-	}catch(NullPointerException e)
-	{
-	
-	}
-	%>
-	<form action="bookserch" method="post">
-		図書名検索<input type="text" name="book_name"> 
-		<input type="submit" value="検索">
+	<h2>図書一覧</h2>
+	<form action="bookserchservlet" method="post">
+		図書名検索<input type="text" name="book_name"> <input type="submit"
+			value="検索">
 	</form>
-	<form action="categoryserch" method="post">
-		カテゴリ検索<input type="text" name="category_name"> 
-		<input type="submit" value="検索">
+	<form action="categoryserchservlet" method="post">
+		カテゴリ検索<input type="text" name="category_name"> <input
+			type="submit" value="検索">
 	</form>
-	
+	<% 
+	List<BookBean> bookList =(List<BookBean>) request.getAttribute("bookList");  
+	%>
 	<table border="1">
 		<tr>
 			<th>ISBN</th>
@@ -72,12 +54,10 @@ table {
 			<td> 
 			<form action="bookdetail" method="post">
 					<input type="hidden" name="isbn" value="<%=book.getIsbn() %>">
-					<input type="submit" value="詳細"> 
-					</form>
-				</td>
+					<input type="submit" value="詳細">
+				</form></td>
 		</tr>
-		<%} %> 
-	
+		<%} %>
 	</table>
 	<form action="category-insert.jsp">
 		<input type="submit" value="カテゴリー登録">
@@ -85,7 +65,7 @@ table {
 	<form action="category-delete.jsp">
 		<input type="submit" value="カテゴリー削除">
 	</form>
-	<form action="booklistservlet" method="post">
+	<form action="book-list.jsp" method="post">
 		<input type="submit" value="図書管理メニューに戻る">
 	</form>
 
