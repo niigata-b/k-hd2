@@ -10,7 +10,7 @@
 <body>
 <!-- aa -->
 	<h1>LibraCare</h1>
-	<form action="logout" method="post">
+	<form id = "logout2" action="logout" method="post">
 		<input type="submit" value="ログアウト" id ="logout">
 	</form>
 	
