@@ -1,11 +1,17 @@
 package servlet;
 
 import java.io.IOException;
+import java.sql.SQLException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import model.dao.UserDAO;
+import model.entity.UserBean;
 
 /**
  * Servlet implementation class UserDeleteServlet
@@ -35,7 +41,44 @@ public class UserDeleteServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+		
+		request.setCharacterEncoding("UTF-8");
+		
+		UserBean user = new UserBean();
+		
+		String user_id = request.getParameter("user_id");
+		String user_name = request.getParameter("user_name");
+		String url = null;
+		int count = 0;
+		
+		
+		user.setUserId(user_id);
+		user.setUserName(user_name);
+		
+		UserDAO dao = new UserDAO();
+		
+		try {
+			// DAOの利用
+			count = dao.userdelete(user);
 
-}
+			// リクエストスコープへの属性の設定
+			request.setAttribute("user", user);
+
+			if(count != 0)
+			{
+				url = "user-delete-result.jsp";
+			}
+			else
+			{
+				url = "user-delete-failure.jsp";
+			}
+
+		}catch (SQLException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+			// リクエストの転送
+			RequestDispatcher rd = request.getRequestDispatcher(url);
+			rd.forward(request, response);
+		}
+	}

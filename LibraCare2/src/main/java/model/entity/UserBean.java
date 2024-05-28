@@ -1,41 +1,52 @@
 package model.entity;
 
-import java.io.IOException;
-import javax.servlet.ServletException;
+import java.io.Serializable;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class UserBean
  */
 @WebServlet("/UserBean")
-public class UserBean extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public UserBean() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
+public class UserBean implements Serializable {
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+
+	// 利用者ID
+	private String user_id;
+	// 利用者名
+	private String user_name;
+
+
+	public UserBean() {
+		super();
+		// TODO Auto-generated constructor stub
+
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	// ゲッター
+	public String getUserId()
+	{
+		return user_id;
 	}
+
+	public String getUserName()
+	{
+		return user_name;
+	}
+
+	// セッター
+	public void setUserId(String user_id)
+	{
+		this.user_id = user_id;
+	}
+
+	public void setUserName(String user_name)
+	{
+		this.user_name = user_name;
+	}
+
 
 }
