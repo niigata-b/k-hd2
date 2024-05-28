@@ -14,11 +14,18 @@ text-align: center;
 <body>
 <h2>貸出返却管理</h2>
 <h1>貸出返却メニュー画面</h1>
+
 <form action = "lendinglist" method = "POST">
 <input type = "submit" value = "貸出中情報一覧">
 </form>
+
 <form action ="loan.jsp" method = "POST">
 <input type = "submit" value = "貸出登録">
 </form>
+
+<form action ="menu" method = "POST">
+<input type ="submit" value = "トップメニューに戻る">
+</form>
+
 </body>
 </html>

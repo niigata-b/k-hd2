@@ -17,8 +17,8 @@
 		<input type="submit" value="管理者一覧">
 	</form>
 
-	<form action="top-menu.jsp" method="post">
-		<input type="submit" value="トップメニューに戻る">
+	<form action ="menu" method = "POST">
+		<input type ="submit" value = "トップメニューに戻る">
 	</form>
 
 </body>

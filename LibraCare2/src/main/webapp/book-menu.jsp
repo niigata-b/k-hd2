@@ -21,8 +21,8 @@ text-align:center;
 	<form action="book-insert.jsp">
 		<input type="submit" value="図書登録">
 	</form>
-	<form action="top-menu.jsp">
-		<input type="submit" value="トップメニューに戻る">
+	<form action ="menu" method = "POST">
+		<input type ="submit" value = "トップメニューに戻る">
 	</form>
 </body>
 </html>
