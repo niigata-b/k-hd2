@@ -95,7 +95,7 @@ if(!(message.equals(null))) {
 	<form action="category-insert.jsp">
 		<input type="submit" value="カテゴリー登録">
 	</form>
-	<form action="category-delete.jsp">
+	<form action="categorydeletelist">
 		<input type="submit" value="カテゴリー削除">
 	</form>
 	<form action="book-menu.jsp" method="post">

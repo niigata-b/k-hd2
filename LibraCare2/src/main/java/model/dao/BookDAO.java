@@ -110,7 +110,7 @@ public class BookDAO {
 		List<BookBean> bookList = new ArrayList<BookBean>();
 
 
-		String sql = "select * from book where book_name = ?";
+		String sql = "select * from book where book_name =?";
 
 		try (Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
