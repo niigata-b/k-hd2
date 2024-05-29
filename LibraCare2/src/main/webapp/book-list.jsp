@@ -27,7 +27,7 @@ table {
 	String message = (String) request.getAttribute("message"); 
 	
 	String book_name = " ";
-	String category_name = "";
+	String category_name = " ";
 	try
 	{
 		book_name =bs.getBookName();
