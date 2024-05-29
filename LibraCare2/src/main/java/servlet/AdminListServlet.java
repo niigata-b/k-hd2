@@ -72,7 +72,7 @@ public class AdminListServlet extends HttpServlet {
 
 			} else {
 				
-				url = "admin-menu-deficiency.jsp";//管理者一覧表示失敗画面へ
+				url = "admin-list-failure.jsp";//管理者一覧表示失敗画面へ
 			} 
 	
 

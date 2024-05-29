@@ -1,20 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>管理者一覧表示失敗画面</title>
 </head>
 <body>
-<h2>管理者管理</h2>
-<h1>管理者詳細画面</h1>
+	<h2>管理者管理</h2>
+	<h1>管理者一覧表示失敗画面</h1>
 
-<p style="color: red;">管理者詳細表示ができませんでした</p>
+	<p font color="red">管理者一覧を表示できませんでした</p>
+	<br>
 
-<form action="adminlist" method="post">
-	<input type="submit" value="管理者一覧画面に戻る">
-</form>
+	<form action="admin-management-menu.jsp" method="post"></form>
+	<input type = "submit" value = "管理者管理メニューに戻る">
+
 
 </body>
 </html>
