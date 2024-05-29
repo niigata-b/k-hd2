@@ -25,7 +25,7 @@ table {
 	String message = (String) request.getAttribute("message"); 
 	
 	String book_name = " ";
-	String category_name = " ";
+	String category_name = "  ";
 	try
 	{
 		book_name =bs.getBookName();
@@ -111,7 +111,7 @@ if(!(message.equals(null))) {
 	<form action="category-insert.jsp">
 		<input type="submit" value="カテゴリー登録">
 	</form>
-	<form action="categorydeletelist">
+	<form action="categorydeletelist" method="post">
 		<input type="submit" value="カテゴリー削除">
 	</form>
 	<form action="book-menu.jsp" method="post">
