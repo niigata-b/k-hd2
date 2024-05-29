@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>図書情報登録失敗画面あ</title>
+<title>図書情報登録失敗画面</title>
+<link rel="stylesheet" href="style1.css">
 </head>
 <body>
 <%

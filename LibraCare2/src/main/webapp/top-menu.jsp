@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>LibraCare</title>
 <link rel="stylesheet" href="style1.css">
-<img src="LibraCare3maru.png" width ="500px">
+<img src="LibraCare4.png" width ="500px">
 </head>
 <body>
 <div>

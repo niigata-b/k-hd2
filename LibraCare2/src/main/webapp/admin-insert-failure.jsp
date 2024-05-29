@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>管理者登録失敗画面</title>
+<link rel="stylesheet" href="style1.css">
 </head>
 <body>
 	<h2>管理者登録</h2>

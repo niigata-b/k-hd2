@@ -5,15 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>ユーザ登録失敗画面</title>
-<style>
-body{
-text-align: center;
-}
-
-h2{
-	color: red;
-}
-</style>
+<link rel="stylesheet" href="style1.css">
 </head>
 <body>
 <%

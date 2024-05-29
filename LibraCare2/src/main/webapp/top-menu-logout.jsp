@@ -5,11 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>ログアウト画面</title>
-<style>
-body {
-text-align:center;
-}
-</style>
+<link rel="stylesheet" href="style1.css">
 </head>
 <body>
 <h1>ログアウトしました</h1>

@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>管理者変更画面</title>
+<link rel="stylesheet" href="style1.css">
 </head>
 <body>
 <%

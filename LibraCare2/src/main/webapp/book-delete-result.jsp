@@ -5,13 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>削除確定画面</title>
+<link rel="stylesheet" href="style1.css">
 </head>
 <body>
-<style>
-body{
-text-align: center;
-}
-</style>
 </head>
 <body>
 <%

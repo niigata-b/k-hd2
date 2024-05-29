@@ -5,11 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>貸出登録確認画面</title>
-<style>
-body{
-text-align: center;
-}
-</style>
+<link rel="stylesheet" href="style1.css">
 </head>
 <body>
 <%

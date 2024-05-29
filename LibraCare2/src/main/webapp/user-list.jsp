@@ -5,10 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>ユーザ一覧表示画面</title>
+<link rel="stylesheet" href="style1.css">
 <style>
-body{
-text-align: center;
-}
 div {
 overflow-y: scroll;
 }

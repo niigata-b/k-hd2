@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>図書管理メニュー</title>
+<link rel="stylesheet" href="style1.css">
 <style>
 body {
 text-align:center;

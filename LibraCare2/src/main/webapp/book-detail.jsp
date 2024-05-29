@@ -5,11 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>図書詳細画面</title>
-<style>
-body {
-text-align:center;
-}
-</style>
+<link rel="stylesheet" href="style1.css">
 </head>
 <body>
 	<h2>図書管理</h2>

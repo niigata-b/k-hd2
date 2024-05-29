@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>カテゴリ登録画面</title>
+<link rel="stylesheet" href="style1.css">
 </head>
 <body>
 	<%

@@ -5,16 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>ユーザ削除失敗画面</title>
-<style>
-body{
-text-align: center;
-}
-}
-
-h2{
-	color: red;
-}
-</style>
+<link rel="stylesheet" href="style1.css">
 </head>
 <body>
 <h1>ユーザ削除失敗画面</h1>

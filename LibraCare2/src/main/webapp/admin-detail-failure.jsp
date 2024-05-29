@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>管理者詳細表示失敗画面</title>
+<link rel="stylesheet" href="style1.css">
 </head>
 <body>
 <h2>管理者管理</h2>

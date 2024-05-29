@@ -25,7 +25,7 @@
 			if (!(loginFailureMessage.equals(null))) {
 		%>
 
-		<p><%=loginFailureMessage%></p>
+		<p id ="error"><%=loginFailureMessage%></p>
 		<%
 		}
 
@@ -35,13 +35,13 @@
 	%>
 	
 	<form action="login" method="post" onsubmit="OnButtonClick()">
-		　　管理者ID：
+		<p class ="loginlabel">　管理者ID：</p>
 		<input class ="inputform" type="text" name="admin_id" id="admin_id"><br>
 
-		パスワードID：
+		<p class ="loginlabel">パスワード：</p>
 		<input class ="inputform" type="password" name="password" id="password"><br>
 			
-		<input type="submit" value="ログイン" >
+		<input id = "loginbtn" type="submit" value="ログイン" >
 	</form>
 
 
