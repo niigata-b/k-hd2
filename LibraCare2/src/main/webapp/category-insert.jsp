@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" import="model.entity.BookBean"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,15 +11,22 @@
 	<%
 	
 	String messageNull = (String)request.getAttribute("messageNull"); 
+	BookBean book = (BookBean)request.getAttribute("book");
+	String category_name = "";
+	try {
+		category_name = book.getCategoryName();
+	} catch(Exception e) {
+		
+	}
 	%>
 	<h2>カテゴリー登録画面</h2>
 	新しく登録するカテゴリー名を入力してください
 
 	<form action="categoryinsertconfirm" method="post">
-		<%
-try {
-if(!(messageNull.equals(null))) {
-%>
+	<%
+	try {
+	if(!(messageNull.equals(null))) {
+	%>
 
 		<%=messageNull %><br>
 
@@ -31,7 +38,7 @@ if(!(messageNull.equals(null))) {
 	
 }
 %>
-		<input class ="inputform" type="text" name="category_name"> 
+		<input class ="inputform" type="text" name="category_name" value="<%=category_name%>"> 
 		<input type="submit"value="カテゴリー名登録">
 	</form>
 

@@ -40,9 +40,12 @@ public class CategoryInsertConfirm extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 
+		int cancel = 0;
 		String category_name = request.getParameter("category_name");
-		
-		
+		try {
+		cancel = Integer.parseInt(request.getParameter("cancel"));
+		}catch(Exception e) {
+		}
 		String messageNull;
 		String url = "category-insert-confirm.jsp";
 
@@ -53,14 +56,15 @@ public class CategoryInsertConfirm extends HttpServlet {
 			request.setAttribute("messageNull",messageNull);
 		}
 		
-	
-
 		BookBean book = new BookBean();
 		book.setCategoryName(category_name);
 		
-
 		// リクエストスコープへの属性の設定
 		request.setAttribute("book", book);
+		
+		if(cancel == 1) {
+			url = "category-insert.jsp";
+		}
 
 		// リクエストの転送
 		RequestDispatcher rd = request.getRequestDispatcher(url);

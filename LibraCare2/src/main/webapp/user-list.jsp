@@ -5,52 +5,48 @@
 <head>
 <meta charset="UTF-8">
 <title>ユーザ一覧表示画面</title>
-<link rel="stylesheet" href="style1.css">
-<style>
-div {
-overflow-y: scroll;
-}
-table {
-margin-left: 500px;
-}
-</style>
+<link rel="stylesheet" href="list.css">
 </head>
-
 <body>
-<h1>ユーザ一覧表示画面</h1>
 <%
-List<UserBean> userList
-= (List<UserBean>) request.getAttribute("userList");
+	List<UserBean> userList = (List<UserBean>) request.getAttribute("userList");
 %>
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
+<h1>ユーザ一覧　　 </h1>
+</div>
+<br>
 
-	<div>
-	<table border ="1">
-	<tr>
-	<th>ユーザID</th>
-	<th>ユーザ名</th>
-	<th></th>
-	</tr>
-	<%
-		for (UserBean user : userList) {
-	%>
-	<tr>
-		<td><%=user.getUserId() %></td>
-		<td><%=user.getUserName() %></td>
-		<td>
-			<form action ="userdetail" method="POST">
-				<input type="hidden" name ="user_id" value="<%=user.getUserId() %>">
-				<input type="hidden" name ="user_name" value="<%=user.getUserName() %>">
-				<input type="submit" value ="詳細">
-			</form>
-		</td>
-	</tr>
-	<%
-		}
-	%>
-	</table>
-	</div>
-	<form action ="user-menu.jsp" method="POST">
-	<input type ="submit" value="ユーザ管理メニューに戻る">
-	</form>
+<div class ="tablediv">
+<table border ="1">
+<tr>
+<th>ユーザID</th>
+<th>ユーザ名</th>
+<th></th>
+</tr>
+<%
+	for (UserBean user : userList) {
+%>
+<tr>
+	<td><%=user.getUserId() %></td>
+	<td><%=user.getUserName() %></td>
+	<td>
+		<form action ="userdetail" method="POST">
+			<input type="hidden" name ="user_id" value="<%=user.getUserId() %>">
+			<input type="hidden" name ="user_name" value="<%=user.getUserName() %>">
+			<input class ="detailbtn" type="submit" value ="詳細">
+		</form>
+	</td>
+</tr>
+<%
+	}
+%>
+</table>
+</div>
+
+<form action ="user-menu.jsp" method="POST">
+<input class ="returnmenu" type ="submit" value="ユーザ管理メニューに戻る">
+</form>
+
 </body>
 </html>

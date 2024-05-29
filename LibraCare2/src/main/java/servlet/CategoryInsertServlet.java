@@ -53,35 +53,26 @@ public class CategoryInsertServlet extends HttpServlet {
 		
 		CategoryDAO dao = new CategoryDAO();
 
-		
-		
-		
-			try {
-				count = dao.categoryInsert(book);
-			} catch (ClassNotFoundException e) {
-				// TODO 自動生成された catch ブロック
-				e.printStackTrace();
-			} catch (SQLException e) {
-				// TODO 自動生成された catch ブロック
-				e.printStackTrace();
-			}
+		try {
+			count = dao.categoryInsert(book);
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO 自動生成された catch ブロック
+			url = "category-insert-failure.jsp";
+		}
 
-			
-			request.setAttribute("book", book);
+		request.setAttribute("book", book);
 
-			if(count != 0)
-			{
-				url = "category-insert-result.jsp";
-			}
-			else
-			{
-				url = "category-insert-failure.jsp";
-			}
-
+		if(count != 0)
+		{
+			url = "category-insert-result.jsp";
+		}
+		else
+		{
+			url = "category-insert-failure.jsp";
+		}
 
 		// リクエストの転送
 		RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);
 	}
-
 }

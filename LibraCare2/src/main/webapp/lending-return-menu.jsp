@@ -4,26 +4,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="style1.css">
-<title>貸出返却メニュー画面</title>
+<link rel="stylesheet" href="topmenu.css">
+<title>貸出返却メニュー</title>
 </head>
 <body>
-<h2>貸出・返却管理</h2>
-<br>
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
 <h1>貸出返却メニュー</h1>
-<hr>
-<br>
-<form action = "lendinglist" method = "POST">
-<input class ="btn" id = "btn1" type ="submit" value = " 　　　貸出中情報一覧　　　 ">
-</form>
+</div>
 <br>
 
-<form action ="loan.jsp" method = "POST">
-<input class ="btn" id = "btn2" type ="submit" value = "　　　　　貸出登録　　　　　">
+<form action = "lendinglist" method = "POST">
+<input class ="btn" type ="submit" value = "貸出中情報一覧">
 </form>
-<br>
+
+<form action ="loan.jsp" method = "POST">
+<input class ="btn" type ="submit" value = " 　貸出登録　 ">
+</form>
+
 <form action ="menu" method = "POST">
-<input class ="btn" id = "btn3" type ="submit" value = "　　トップメニューに戻る　　">
+<input class ="btn" type ="submit" value = "トップメニューに戻る">
 </form>
 
 </body>

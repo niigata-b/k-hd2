@@ -49,6 +49,7 @@ public class BookSearchServlet extends HttpServlet {
 		List<BookBean> categoryList = null;
 
 		String book_name = request.getParameter("book_name");
+		String category_name = request.getParameter("category_name");
 		
 		String message = null;
 		String url = "book-list.jsp";
@@ -56,7 +57,7 @@ public class BookSearchServlet extends HttpServlet {
 		BookBean book = new BookBean();
 		
 		book.setBookName(book_name);
-		
+		book.setCategoryName(category_name);
 		
 		BookDAO dao = new BookDAO();
 		CategoryDAO daoc = new CategoryDAO();

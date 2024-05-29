@@ -46,7 +46,7 @@ public class CategorySearchServlet extends HttpServlet {
 		List<BookBean> bookList = null; 
 		List<BookBean> categoryList = null; 
 		
-
+		String book_name = request.getParameter("book_name");
 		String category_name = request.getParameter("category_name");
 		
 		String message = null;
@@ -55,19 +55,16 @@ public class CategorySearchServlet extends HttpServlet {
 		BookBean book = new BookBean();
 		
 		book.setCategoryName(category_name);
-		
-		
+		book.setBookName(book_name);
 		
 		CategoryDAO daoc = new CategoryDAO();
 		
 			
 		try {
-		
 			
-		bookList = daoc.categorySearch(book);
-		categoryList = daoc.categoryAll(); 
+			bookList = daoc.categorySearch(book);
+			categoryList = daoc.categoryAll(); 
 		
-			
 			if(bookList.size() == 0)
 			{
 				message ="検索結果が見つかりませんでした";

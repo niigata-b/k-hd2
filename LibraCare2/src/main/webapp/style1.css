@@ -16,6 +16,8 @@ margin-left: 320px;
 }
 
 table {
+ padding-left: 200px;
+
  width: 60%;
  text-align: center;
  border-collapse: collapse;
@@ -41,7 +43,7 @@ table td {
 	margin-bottom: 10px
 }
 
-#searchbtn {
+.searchbtn {
 	display:inline;
 	position:absolute;
 	top:150px;
@@ -140,7 +142,7 @@ form {
 }
 
 input[type="submit"]{
-    font-size: 20px;
+    text-size-adjust: 20px;
     display:inline;
 }
 
@@ -168,7 +170,7 @@ input:hover {
 input:active {
   transform: translateY(2px) translateX(1px);
   box-shadow: 0 0 0 0 black;
-};
+}
 
 .btn {
  font-size: 25px;

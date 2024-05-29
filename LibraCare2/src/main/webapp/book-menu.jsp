@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -6,24 +5,26 @@
 <head>
 <meta charset="UTF-8">
 <title>図書管理メニュー</title>
-<link rel="stylesheet" href="style1.css">
-<style>
-body {
-text-align:center;
-}
-</style>
+<link rel="stylesheet" href="topmenu.css">
 </head>
 <body>
-	<h2>図書管理</h2>
-	<h1>図書管理メニュー</h1>
-	<form action="booklist" method="post">
-		<input type="submit" value="図書一覧">
-	</form>
-	<form action="book-insert.jsp">
-		<input type="submit" value="図書登録">
-	</form>
-	<form action ="top-menu.jsp" method = "POST">
-		<input type ="submit" value = "トップメニューに戻る">
-	</form>
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
+<h1>図書管理メニュー</h1>
+</div>
+<br>
+
+<form action="booklist" method="post">
+<input class ="btn" type="submit" value="　図書一覧　">
+</form>
+
+<form action="book-insert.jsp">
+<input class ="btn" type="submit" value="　図書登録　">
+</form>
+
+<form action ="top-menu.jsp" method = "POST">
+<input class ="btn" type ="submit" value = "トップメニューに戻る">
+</form>
+
 </body>
 </html>

@@ -5,17 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>図書一覧画面</title>
-<link rel="stylesheet" href="style1.css">
-<style>
-
-div {
-	overflow-y: scroll;
-}
-
-table {
-	margin-left: 500px;
-}
-</style>
+<link rel="stylesheet" href="list.css">
 </head>
 <body> 
 <%
@@ -23,102 +13,98 @@ table {
 	List<BookBean> categoryList = (List<BookBean>) request.getAttribute("categoryList");
  	BookBean bs = (BookBean)request.getAttribute("book");
 	String message = (String) request.getAttribute("message"); 
-	
 	String book_name = " ";
 	String category_name = "  ";
-	try
-	{
-		book_name =bs.getBookName();
-	}
-	catch(NullPointerException e)
-	{
+	try {
+		book_name = bs.getBookName();
+	} catch(NullPointerException e) {
 		book_name = "";
-	}
-	try
-	{
-		category_name =bs.getCategoryName();
-	}
-	catch(NullPointerException e)
-	{
+	} try {
+		category_name = bs.getCategoryName();
+	} catch(NullPointerException e) {
 		category_name = "";
 	}
 %>
-<%
-try {
-if(!(message.equals(null))) {
-%>
 
-<%=message %><br>
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
+<h1>図書一覧　　　</h1>
+</div>
+<br>
 
-<%
-}
-
-}catch(NullPointerException e)
-{
-
-}
-%>
-
-	<h2>図書一覧</h2>
-	<form action="booksearch" method="post">
-		図書名検索 <input class ="inputform" type="search" name="book_name" value="<%=book_name%>">  
-		<input type="submit" value="検索">
-	</form> 
+<p class ="searchp">検索したい図書名またはカテゴリ名を入力してください。</p>
+<form action="booksearch" method="post">
+<input class ="inputform" type="search" name="book_name" value="<%=book_name%>">
+<input class ="inputform" type="hidden" name="category_name" value="<%=category_name%>">   
+<input class = "searchbtn" type="submit" value="検索">
+</form> 
 	
-	<form action="categorysearch" method="post">
-	カテゴリー名検索 
-	<select name="category_name"> 
-	<option><%=category_name%></option>
-	 
-	<% 
-	for (BookBean category : categoryList) {  
-	%>  
-	<option><%=category.getCategoryName()%></option> 
-	<%} %>
-	</select>  
-
-	<input type="submit" value="検索">  
-	</form>
-	<table border="1">
-		<tr>
-			<th>ISBN</th>
-			<th>図書名</th>
-			<th>カテゴリー名</th>
-			<th>個数</th>
-			<th>貸出中フラグ</th>
-			<th></th>
-		</tr>
-		<%
-		for (BookBean book : bookList) {
-		%>
-		<tr>
-			<td><%=book.getIsbn()%></td>
-			<td><%=book.getBookName()%></td>
-			<td><%=book.getCategoryName()%></td>
-			<td><%=book.getBookCount()%></td>
-			<td><%=book.getLendingFlag()%></td>
-			<td>
-				<form action="bookdetail" method="post">
-					<input type="hidden" name="isbn" value="<%=book.getIsbn()%>">
-					<input type="submit" value="詳細">
-				</form>
-			</td>
-		</tr>
-		<%
+<form action="categorysearch" method="post">
+<input class ="inputform" type="hidden" name="book_name" value="<%=book_name%>">
+<select name="category_name"> 
+<option><%=category_name%></option>
+<% 
+for (BookBean category : categoryList) {  
+%>  
+<option><%=category.getCategoryName()%></option> 
+<%} %>
+</select>  
+<input class = "searchbtn2" type="submit" value="検索">  
+</form>
+<% 
+	try {
+		if(!(message.equals(null))) {
+%>
+			<p class ="error"><%=message %></p>
+<%
 		}
-		%>
-	</table>
-	<form action="category-insert.jsp">
-		<input type="submit" value="カテゴリー登録">
-	</form>
-	<form action="categorydeletelist" method="post">
-		<input type="submit" value="カテゴリー削除">
-	</form>
-	<form action="book-menu.jsp" method="post">
-		<input type="submit" value="図書管理メニューに戻る">
-	</form>
+	}catch(NullPointerException e) {
+	}
+%>
+<div class ="tablediv">
+<table border="1">
+<tr>
+<th>ISBN</th>
+<th>図書名</th>
+<th>カテゴリー名</th>
+<th>個数</th>
+<th>貸出中フラグ</th>
+<th></th>
+</tr>
+		
+<%
+	for (BookBean book : bookList) {
+%>
+<tr>
+	<td><%=book.getIsbn()%></td>
+	<td><%=book.getBookName()%></td>
+	<td><%=book.getCategoryName()%></td>
+	<td><%=book.getBookCount()%></td>
+	<td><%=book.getLendingFlag()%></td>
+	<td>
+		<form action="bookdetail" method="post">
+			<input type="hidden" name="isbn" value="<%=book.getIsbn()%>">
+			<input type="submit" value="詳細">
+		</form>
+	</td>
+</tr>
+<%
+	}
+%>
+</table>
+</div>
 
+<form action="category-insert.jsp">
+<input type="submit" value="カテゴリー登録">
+</form>
 
+<form action="categorydeletelist" method="post">
+<input type="submit" value="カテゴリー削除">
+</form>
+
+<form action="book-menu.jsp" method="post">
+<input type="submit" value="図書管理メニューに戻る">
+</form>
 
 </body>
 </html>

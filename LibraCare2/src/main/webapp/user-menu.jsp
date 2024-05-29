@@ -5,22 +5,25 @@
 <head>
 <meta charset="UTF-8">
 <title>ユーザ管理メニュー画面</title>
-<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="topmenu.css">
 </head>
-
 <body>
-<h1>ユーザ管理メニュー画面</h1>
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
+<h1>ユーザ管理メニュー</h1>
+</div>
+<br>
 
 <form action ="userlist" method = "POST">
-<input type ="submit" value = "ユーザ一覧">
+<input class ="btn" type ="submit" value = "ユーザ一覧">
 </form>
 
 <form action ="user-insert.jsp" method = "POST">
-<input type ="submit" value = "ユーザ登録">
+<input class ="btn" type ="submit" value = "ユーザ登録">
 </form>
 
 <form action ="menu" method = "POST">
-<input type ="submit" value = "トップメニューに戻る">
+<input class ="btn" type ="submit" value = "トップメニューに戻る">
 </form>
 
 </body>
