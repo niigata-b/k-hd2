@@ -10,7 +10,7 @@
 <%
 	AdminBean admin = (AdminBean)request.getAttribute("admin");
 %>
-<h1>管理者管理</h1>
+<h2>管理者管理</h2>
 <h1>管理者登録確定画面</h1>
 以下の内容を登録しました。<br>
 

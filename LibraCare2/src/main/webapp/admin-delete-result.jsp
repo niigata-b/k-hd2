@@ -12,7 +12,7 @@
 	AdminBean admin = (AdminBean)request.getAttribute("admin");
 %>
 
-<h1>管理者削除</h1>
+<h2>管理者削除</h2>
 <h1>管理者削除確定画面</h1>
 以下の内容を削除しました<br>
 

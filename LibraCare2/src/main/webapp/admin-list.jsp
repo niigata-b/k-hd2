@@ -20,7 +20,7 @@ margin-bottom: 10px;
 </style>
 </head>
 <body>
-	<h1>管理者管理</h1>
+	<h2>管理者管理</h2>
 	<h1>管理者一覧画面</h1>
 
 	<%

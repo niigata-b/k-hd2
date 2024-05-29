@@ -118,4 +118,22 @@ public class AdminDAO {
 		return count;
 	}
 
-}
+public int adminupdate(AdminBean admin) throws SQLException, ClassNotFoundException {
+		
+		String sql = "update admin set admin_id = ?, admin_name = ?, password = ? where admin_id = ?";
+		int count = 0;
+		
+		// データベースへの接続の取得、Statementの取得、SQLステートメントの実行
+				try (Connection con = ConnectionManager.getConnection();
+						PreparedStatement pstmt = con.prepareStatement(sql)){
+
+					pstmt.setString(1, admin.getAdmin_id());
+					pstmt.setString(2, admin.getAdmin_name());
+					pstmt.setString(3, admin.getPassword());
+					pstmt.setString(4, admin.getAdmin_id());
+
+					count = pstmt.executeUpdate();
+				}
+				return count;
+		}
+	}

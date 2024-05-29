@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>管理者登録</h1>
+	<h2>管理者登録</h2>
 	<h1>管理者登録失敗画面</h1>
 	<p style="color: red;">管理者登録できませんでした</p>
 

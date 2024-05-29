@@ -33,7 +33,10 @@
 	</table>
 
 
-	<form action="adminupdate" method="post">
+	<form action="adminupdateform" method="post">
+		<input type="hidden" name="admin_id"value="<%=admindetail.getAdmin_id()%>">
+		<input type="hidden" name="admin_name"value="<%=admindetail.getAdmin_name()%>">
+		<input type="hidden" name="password"value="<%=admindetail.getPassword()%>">
 		<input type="submit" value="変更">
 	</form>
 
@@ -47,7 +50,7 @@
 
 
 	<form action="adminlist" method="post">
-		<input type="submit" value="管理者一覧画面">
+		<input type="submit" value="管理者一覧画面に戻る">
 	</form>
 
 

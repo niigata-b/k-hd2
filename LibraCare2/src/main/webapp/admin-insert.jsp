@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>管理者管理</h1>
+	<h2>管理者管理</h2>
 	<h1>管理者登録画面</h1>
 
 
