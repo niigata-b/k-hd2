@@ -5,15 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>ログイン画面</title>
-<style>
-body {
-text-align:center;
-}
-</style>
+<link rel="stylesheet" href="style1.css">
+<h2>LibraCare</h2>
 </head>
 <body>
-<!-- aa -->
-<h1>LibraCare</h1>
+<hr>
 	<%
 	String loginFailureMessage = (String) request.getAttribute("loginFailureMessage");
 	%>
@@ -42,12 +38,12 @@ text-align:center;
 		<table border="1">
 			<tr>
 				<th>管理者ID</th>
-				<td><input type="text" name="admin_id" id="admin_id"></td>
+				<td><input class ="inputform" type="text" name="admin_id" id="admin_id"></td>
 			</tr>
 
 			<tr>
 				<th>パスワードID</th>
-				<td><input type="password" name="password" id="password"></td>
+				<td><input class ="inputform" type="password" name="password" id="password"></td>
 			</tr>
 
 

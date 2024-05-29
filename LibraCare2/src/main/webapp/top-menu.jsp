@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>LibraCare</title>
 <link rel="stylesheet" href="style1.css">
-<h1>LibraCare</h1>
+<img src="LibraCare3maru.png" width ="500px">
 </head>
 <body>
 <div>
@@ -17,7 +17,7 @@
 	<br>
 	
 	<form action="book-menu.jsp" method="post">
-		<input class ="btn" type="submit" value="図書管理">
+		<input class ="btn" type="submit" value=" 　図書管理　 ">
 	</form>
 
 	<form action="lending-return-menu.jsp" method="post">
@@ -27,11 +27,11 @@
 	<br>
 	
 	<form action="user-menu.jsp" method="post">
-		<input class ="btn" type="submit" value="ユーザ管理">
+		<input class ="btn" type="submit" value="　ユーザ管理　">
 	</form>
 	
 	<form action="admin-management-menu.jsp" method="post">
-		<input class ="btn" type="submit" value="管理者管理">
+		<input class ="btn" type="submit" value="　管理者管理　">
 	</form>
 </div>
 </body>
