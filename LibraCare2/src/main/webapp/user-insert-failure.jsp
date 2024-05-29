@@ -17,6 +17,7 @@
 <form action ="userinsertconfirm" method="POST">
 <input type="hidden" name = "user_id" value ="<%=user.getUserId() %>">
 <input type="hidden" name = "user_name" value ="<%=user.getUserName() %>">
+<input type="hidden" name = "cancel" value =1>
 <input type="submit" value ="ユーザ登録画面に戻る">
 </form>
 </body>
