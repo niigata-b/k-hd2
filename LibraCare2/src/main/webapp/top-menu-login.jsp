@@ -6,48 +6,41 @@
 <meta charset="UTF-8">
 <title>ログイン画面</title>
 <link rel="stylesheet" href="style1.css">
-<h2>LibraCare</h2>
 </head>
 <body>
+<div>
+<h2>LibraCare</h2>
+<br>
+<h1>ログイン</h1>
+</div>
 <hr>
+<br>
+<br>
 	<%
 	String loginFailureMessage = (String) request.getAttribute("loginFailureMessage");
 	%>
-
-
-	<form action="login" method="post" onsubmit="OnButtonClick()">
-		<h1>ログイン画面</h1>
-
-		<%
+	
+	<%
 		try {
 			if (!(loginFailureMessage.equals(null))) {
 		%>
 
-		<h1><%=loginFailureMessage%></h1>
-		<br>
-
+		<p><%=loginFailureMessage%></p>
 		<%
 		}
 
 		} catch (NullPointerException e) {
 
 		}
-		%>
+	%>
+	
+	<form action="login" method="post" onsubmit="OnButtonClick()">
+		　　管理者ID：
+		<input class ="inputform" type="text" name="admin_id" id="admin_id"><br>
 
-
-		<table border="1">
-			<tr>
-				<th>管理者ID</th>
-				<td><input class ="inputform" type="text" name="admin_id" id="admin_id"></td>
-			</tr>
-
-			<tr>
-				<th>パスワードID</th>
-				<td><input class ="inputform" type="password" name="password" id="password"></td>
-			</tr>
-
-
-		</table>
+		パスワードID：
+		<input class ="inputform" type="password" name="password" id="password"><br>
+			
 		<input type="submit" value="ログイン" >
 	</form>
 

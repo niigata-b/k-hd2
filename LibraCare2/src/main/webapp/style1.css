@@ -5,8 +5,21 @@ body {
     background-color: rgb(213, 255, 213);
 }
 
+h2 {
+	display:inline;
+	position: absolute;
+	left:30px
+}
+
 h1 {
-	font-size: 50px;
+	font-size: 45px;
+	display:inline;
+	margin-bottom:50px;
+}
+
+p {
+	font-size: 20px;
+	color: red;
 }
 
 #logout3 {
@@ -87,6 +100,7 @@ input:hover::after {
   background-color: #f3f3f3;
   border-radius: 10px;
   transition: all 0.5s;
+  text-transform:none;
 }
 
 .inputform:hover,
@@ -94,4 +108,38 @@ input:hover::after {
   border: 2px solid #4a9dec;
   box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
   background-color: white;
+}
+
+.selectbox {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    right:50px;
+    width:50px;
+    height: 30px;
+}
+
+.selectbox::after {
+    position: absolute;
+    right: 15px;
+    width: 10px;
+    height: 7px;
+    background-color: #535353;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    content: '';
+    pointer-events: none;
+}
+
+.selectbox select {
+    appearance: none;
+    min-width: 230px;
+    height: 2.8em;
+    padding: .4em calc(.8em + 30px) .4em .8em;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 4px rgb(0 0 0 / 2%), 0 2px 3px -2px rgba(0 0 0 / 5%);
+    background-color: #fff;
+    color: #333333;
+    font-size: 1em;
+    cursor: pointer;
 }

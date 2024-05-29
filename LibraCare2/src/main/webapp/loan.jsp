@@ -5,11 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>貸出登録画面</title>
-<style>
-body {
-text-align:center;
-}
-</style>
+<link rel="stylesheet" href="style1.css">
 </head>
 <body>
 <%
@@ -45,7 +41,10 @@ text-align:center;
 	}
 %>
 <h2>貸出・返却管理</h2>
+<br>
 <h1>貸出登録画面</h1>
+<hr>
+<br>
 <form action ="loanconfirm" method="POST">
 <%
 try {
@@ -62,10 +61,10 @@ if(!(messageNull.equals(null))) {
 	
 }
 %>
-ユーザID
-<input type="text" name="user_id" value ="<%=user_id%>"><br>
-ISBN
-<input type="text" name="isbn" value ="<%=isbn%>"><br>
+ユーザID：
+<input class ="inputform" type="text" name="user_id" value ="<%=user_id%>"><br>
+　　ISBN：
+<input class ="inputform" type="text" name="isbn" value ="<%=isbn%>"><br>
 <%
 try {
 if(!(messageNum.equals(null))) {
@@ -82,7 +81,7 @@ if(!(messageNum.equals(null))) {
 }
 %>
 貸出個数
-<select name="lending_count">
+<select class ="selectbox" name="lending_count">
 <option><%=lending_count%></option>
 <%
 for(int i = 1; i < 4; i++) {
