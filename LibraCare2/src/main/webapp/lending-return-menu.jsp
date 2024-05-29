@@ -14,16 +14,16 @@
 <hr>
 <br>
 <form action = "lendinglist" method = "POST">
-<input class ="btn" type ="submit" value = " 　　　貸出中情報一覧　　　 ">
+<input class ="btn" id = "btn1" type ="submit" value = " 　　　貸出中情報一覧　　　 ">
 </form>
-
+<br>
 
 <form action ="loan.jsp" method = "POST">
-<input class ="btn" type ="submit" value = "　　　　　貸出登録　　　　　">
+<input class ="btn" id = "btn2" type ="submit" value = "　　　　　貸出登録　　　　　">
 </form>
-
+<br>
 <form action ="menu" method = "POST">
-<input class ="btn" type ="submit" value = "　　トップメニューに戻る　　">
+<input class ="btn" id = "btn3" type ="submit" value = "　　トップメニューに戻る　　">
 </form>
 
 </body>

@@ -10,14 +10,13 @@
 div {
 overflow-y: scroll;
 }
-table {
-margin-left: 500px;
-}
+
 </style>
 </head>
 <body>
 <h2>貸出・返却管理</h2>
 <h1>貸出中情報一覧画面</h1>
+<hr>
 	<%
 		List<LendingBean> lendingList
 			= (List<LendingBean>) request.getAttribute("lendingList");
@@ -58,11 +57,11 @@ margin-left: 500px;
 	
 	}
 	%>
-	
+
 	<form action ="lendingsearch" method ="POST">
-	ISBN：<input type="search" name ="isbn" value ="<%=isbn%>"><br>
-	ユーザID：<input type="search" name ="user_id" value ="<%=user_id%>">
-	<input type ="submit" value ="検索">
+	　　ISBN：<input class ="inputform" type="search" name ="isbn" value ="<%=isbn%>"><br>
+	ユーザID：<input class ="inputform" type="search" name ="user_id" value ="<%=user_id%>">
+	<input id = "searchbtn" type ="submit" value ="検索">
 	</form>
 	<div>
 	<table border ="1">
@@ -87,7 +86,7 @@ margin-left: 500px;
 			<form action ="lendingdetail" method="POST">
 				<input type="hidden" name ="isbn" value="<%=lending.getIsbn() %>">
 				<input type="hidden" name ="user_id" value="<%=lending.getUserId() %>">
-				<input type="submit" value ="詳細">
+				<input class ="detailbtn" type="submit" value ="詳細">
 			</form>
 		</td>
 	</tr>
@@ -96,6 +95,8 @@ margin-left: 500px;
 	%>
 	</table>
 	</div>
+	<br>
+	<br>
 	<form action ="lending-return-menu.jsp" method="POST">
 	<input type ="submit" value="貸出・返却メニューに戻る">
 	</form>

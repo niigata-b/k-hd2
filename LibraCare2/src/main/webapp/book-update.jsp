@@ -100,9 +100,9 @@ catch(NullPointerException e)
 
 <form action ="bookupdateconfirm" method ="POST">
 増やす：
-<input type ="text" name="huyasu" value = <%=huyasu %>><br>
+<input class ="inputform" type ="text" name="huyasu" value = <%=huyasu %>><br>
 減らす：
-<input type ="text" name="herasu" value = <%=herasu %>><br>
+<input class ="inputform" type ="text" name="herasu" value = <%=herasu %>><br>
 <input type="hidden" name ="isbn" value="<%=book.getIsbn() %>">
 <input type="hidden" name ="book_name" value="<%=book.getBookName() %>">
 <input type="hidden" name ="book_count" value="<%=book.getBookCount() %>">

@@ -85,13 +85,13 @@ if(!(messageNum.equals(null))) {
 
 <form action ="bookinsertconfirm" method="POST">
 ISBN
-<input type="text" name="isbn" value ="<%=isbn%>"><br>
+<input class ="inputform" type="text" name="isbn" value ="<%=isbn%>"><br>
 図書名
-<input type="text" name="book_name" value ="<%=book_name%>"><br>
+<input class ="inputform" type="text" name="book_name" value ="<%=book_name%>"><br>
 カテゴリ名
-<input type="text" name="category_name" value ="<%=category_name%>"><br>
+<input class ="inputform" type="text" name="category_name" value ="<%=category_name%>"><br>
 個数
-<input type="text" name="book_count" value ="<%=book_count%>"><br>
+<input class ="inputform" type="text" name="book_count" value ="<%=book_count%>"><br>
 
 <input type="submit"value="登録">
 </form>

@@ -52,9 +52,9 @@
 
 
 <form action ="adminupdateconfirm" method="POST">
-管理者ID：<input type="text" name ="admin_id" value="<%=admin.getAdmin_id() %>" readonly><br>
-管理者名：<input type="text" name ="admin_name" value="<%=admin.getAdmin_name() %>" ><br>
-パスワード：<input type="text" name ="password" value="<%=admin.getPassword() %>" ><br>
+管理者ID：<input class ="inputform" type="text" name ="admin_id" value="<%=admin.getAdmin_id() %>" readonly><br>
+管理者名：<input class ="inputform" type="text" name ="admin_name" value="<%=admin.getAdmin_name() %>" ><br>
+パスワード：<input class ="inputform" type="text" name ="password" value="<%=admin.getPassword() %>" ><br>
 <input type ="submit" value="変更">
 </form>
 

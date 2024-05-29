@@ -31,7 +31,7 @@ if(!(messageNull.equals(null))) {
 	
 }
 %>
-		<input type="text" name="category_name"> 
+		<input class ="inputform" type="text" name="category_name"> 
 		<input type="submit"value="カテゴリー名登録">
 	</form>
 

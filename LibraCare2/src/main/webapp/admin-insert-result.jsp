@@ -19,7 +19,7 @@
 管理者名：<input type="text" name ="admin_name" value="<%=admin.getAdmin_name() %>" readonly><br>
 パスワード：<input type="text" name ="password" value="<%=admin.getPassword() %>" readonly><br>
 
-<form action = "admin-insert.jsp" method = "post">
+<form action = "admin-management-menu.jsp" method = "post">
 <input type = "submit" value = "管理者登録メニューに戻る">
 </form>
 

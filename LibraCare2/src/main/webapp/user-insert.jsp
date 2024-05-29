@@ -53,8 +53,8 @@ if(!(messageNull.equals(null))) {
 	
 }
 %>
-		ユーザID<input type="text" name="user_id"><br>
-		ユーザ名<input type="text" name="user_name"><br>
+		ユーザID<input class ="inputform" type="text" name="user_id"><br>
+		ユーザ名<input class ="inputform" type="text" name="user_name"><br>
 		<input type="submit" value="登録"> 
 	</form>
 	

@@ -35,7 +35,7 @@ if(!(messageNull.equals(null))) {
 
 <form action ="userupdateconfirm" method ="POST">
 <input type="text" name ="user_id" value="<%=user.getUserId() %>"readonly>
-<input type="text" name ="user_name" value="<%=user.getUserName() %>">
+<input class ="inputform" type="text" name ="user_name" value="<%=user.getUserName() %>">
 <input type="submit" value="変更">
 </form>
 

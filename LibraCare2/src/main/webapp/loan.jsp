@@ -61,10 +61,12 @@ if(!(messageNull.equals(null))) {
 	
 }
 %>
+<div id ="loaninp">
 ユーザID：
-<input class ="inputform" type="text" name="user_id" value ="<%=user_id%>"><br>
+<input class ="inputformloan" type="text" name="user_id" value ="<%=user_id%>"><br>
 　　ISBN：
-<input class ="inputform" type="text" name="isbn" value ="<%=isbn%>"><br>
+<input class ="inputformloan" type="text" name="isbn" value ="<%=isbn%>"><br>
+</div>
 <%
 try {
 if(!(messageNum.equals(null))) {
@@ -80,7 +82,10 @@ if(!(messageNum.equals(null))) {
 	
 }
 %>
-貸出個数
+<div id ="lendingcount">
+<br>
+<br>
+貸出個数　　　　　
 <select class ="selectbox" name="lending_count">
 <option><%=lending_count%></option>
 <%
@@ -92,11 +97,19 @@ for(int i = 1; i < 4; i++) {
 <%
 }
 %>
-</select><br>
+</select>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div id = "loanbtn">
 <input type="submit"value="貸出登録">
 </form>
 <form action ="lending-return-menu.jsp">
 <input type="submit"value="キャンセル">
 </form>
+</div>
 </body>
 </html>

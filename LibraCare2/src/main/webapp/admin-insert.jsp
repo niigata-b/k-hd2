@@ -36,12 +36,12 @@
 		<table border="1">
 			<tr>
 				<th>管理者ID</th>
-				<td><input type="text" name="admin_id" id="admin_id"></td>
+				<td><input class ="inputform" type="text" name="admin_id" id="admin_id"></td>
 			</tr>
 
 			<tr>
 				<th>管理者名</th>
-				<td><input type="text" name="admin_name" id="admin_name"></td>
+				<td><input class ="inputform" type="text" name="admin_name" id="admin_name"></td>
 			</tr>
 
 			<tr>

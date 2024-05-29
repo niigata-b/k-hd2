@@ -61,7 +61,7 @@ if(!(message.equals(null))) {
 
 	<h2>図書一覧</h2>
 	<form action="booksearch" method="post">
-		図書名検索 <input type="search" name="book_name" value="<%=book_name%>">  
+		図書名検索 <input class ="inputform" type="search" name="book_name" value="<%=book_name%>">  
 		<input type="submit" value="検索">
 	</form> 
 	
