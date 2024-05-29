@@ -21,12 +21,13 @@ table {
 </head>
 <body> 
 <%
-	List<BookBean> bookList = (List<BookBean>) request.getAttribute("bookList");
+	List<BookBean> bookList = (List<BookBean>) request.getAttribute("bookList"); 
+	List<BookBean> categoryList = (List<BookBean>) request.getAttribute("categoryList");
  	BookBean bs = (BookBean)request.getAttribute("book");
 	String message = (String) request.getAttribute("message"); 
 	
-	String book_name = "";
-
+	String book_name = " ";
+	String category_name = "";
 	try
 	{
 		book_name =bs.getBookName();
@@ -35,7 +36,14 @@ table {
 	{
 		book_name = "";
 	}
-	
+	try
+	{
+		category_name =bs.getCategoryName();
+	}
+	catch(NullPointerException e)
+	{
+		category_name = "";
+	}
 %>
 <%
 try {
@@ -57,12 +65,22 @@ if(!(message.equals(null))) {
 	<form action="booksearch" method="post">
 		図書名検索 <input type="search" name="book_name" value="<%=book_name%>">  
 		<input type="submit" value="検索">
-	</form>
-	<form action="categoryserchservlet" method="post">
-		カテゴリ検索<input type="search" name="category_name">  
-		<input type="submit" value="検索">
-	</form>
+	</form> 
 	
+	<form action="categorysearch" method="post">
+	カテゴリー名検索 
+	<select name="category_name"> 
+	<option><%=category_name%></option>
+	 
+	<% 
+	for (BookBean category : categoryList) {  
+	%>  
+	<option><%=category.getCategoryName()%></option> 
+	<%} %>
+	</select>  
+
+	<input type="submit" value="検索">  
+	</form>
 	<table border="1">
 		<tr>
 			<th>ISBN</th>

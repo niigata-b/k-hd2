@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.dao.BookDAO;
+import model.dao.CategoryDAO;
 import model.entity.BookBean;
 
 /**
@@ -24,7 +25,7 @@ public class BookListServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public BookListServlet() {//a
+	public BookListServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -46,14 +47,14 @@ public class BookListServlet extends HttpServlet {
 		String url = null;
 
 
-		List<BookBean> bookList = null; 
+		List<BookBean> bookList = null;  
+		List<BookBean> categoryList = null;
 		
 		BookDAO dao = new BookDAO(); 
-	
-				try {
-					dao.lendingflagtrue();
-					dao.lendingflagfalse();
-					bookList = dao.selectAll();
+		CategoryDAO daoc = new CategoryDAO();
+ 				try {
+					bookList = dao.selectAll(); 
+					categoryList = daoc.categoryAll();
 				} catch (ClassNotFoundException e) {
 					// TODO 自動生成された catch ブロック
 					e.printStackTrace();
@@ -65,7 +66,8 @@ public class BookListServlet extends HttpServlet {
 			if (bookList!=null) {
 
 
-			 request.setAttribute("bookList",bookList);
+			 request.setAttribute("bookList",bookList); 
+			 request.setAttribute("categoryList", categoryList);
 				url = "book-list.jsp"; //図書一覧へ
 
 			} else {

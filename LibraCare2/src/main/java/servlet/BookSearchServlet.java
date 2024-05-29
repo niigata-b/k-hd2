@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.dao.BookDAO;
+import model.dao.CategoryDAO;
 import model.entity.BookBean;
 
 
@@ -44,50 +45,53 @@ public class BookSearchServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 
-		List<BookBean> bookList = null;
+		List<BookBean> bookList = null; 
+		List<BookBean> categoryList = null;
 
 		String book_name = request.getParameter("book_name");
-
+		
 		String message = null;
 		String url = "book-list.jsp";
-
+		
 		BookBean book = new BookBean();
-
+		
 		book.setBookName(book_name);
-
-
+		
+		
 		BookDAO dao = new BookDAO();
-
-
-
+		CategoryDAO daoc = new CategoryDAO();
+		
+			
 		try {
-
-
-			bookList = dao.bookSearch(book);
-
+		
+			
+			bookList = dao.bookSearch(book); 
+			categoryList = daoc.categoryAll();
+			
 			if(bookList.size() == 0)
 			{
 				message ="検索結果が見つかりませんでした";
 				url ="booklist";
 				request.setAttribute("message", message);
 			}
-
-
+			
+			
 		}catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-
-
-		// リクエストスコープへの属性の設定
+		
+		
+		// リクエストスコープへの属性の設定 
+		request.setAttribute("categoryList", categoryList);
 		request.setAttribute("bookList", bookList);
 		request.setAttribute("book",book);
 
-
-
-
-
+			
+			
+		
+		
 		// リクエストスコープへの属性の設定
-
+		
 		// リクエストの転送
 		RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);
