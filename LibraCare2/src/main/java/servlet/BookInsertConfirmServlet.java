@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.dao.CategoryDAO;
 import model.entity.BookBean;
 
 /**
@@ -40,6 +43,8 @@ public class BookInsertConfirmServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//aa
+		
+		List<BookBean> categoryList = null;
 		request.setCharacterEncoding("UTF-8");
 
 		String isbn = request.getParameter("isbn");
@@ -55,6 +60,22 @@ public class BookInsertConfirmServlet extends HttpServlet {
 		{
 			System.out.println("foiwe");
 		}
+
+		
+		CategoryDAO dao = new CategoryDAO(); 
+		
+		try {
+			categoryList = dao.categoryAll();
+		} catch (ClassNotFoundException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			System.out.println("aei");
+			e.printStackTrace();
+		}
+		
+		request.setAttribute("categoryList",categoryList);
 		
 		String messageNum;
 		String messageNull;

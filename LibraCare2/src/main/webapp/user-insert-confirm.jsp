@@ -11,21 +11,26 @@
 <%
 	UserBean user = (UserBean)request.getAttribute("user");
 %>
-<h1>ユーザ登録確認画面</h1>
-以下の内容で登録します。<br>
-よろしいですか？
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
+<h1>ユーザ登録確認　　</h1>
+</div>
+<br>
+<p class="midasi">以下の内容で登録します。よろしいですか？</p>
 
 <form action ="userinsert" method="POST">
-ユーザID<input type="text" name ="user_id" value="<%=user.getUserId() %>" readonly><br>
-ユーザ名<input type="text" name ="user_name" value="<%=user.getUserName() %>" readonly><br>
-<input type ="submit" value="ユーザ登録確定">
+<span>ユーザID</span>
+<input class ="inputform"type="text" name ="user_id" value="<%=user.getUserId() %>" readonly><br>
+<span>ユーザ名</span>
+<input class ="inputform"type="text" name ="user_name" value="<%=user.getUserName() %>" readonly><br>
+<input class ="bookdeleteform"type ="submit" value="ユーザ登録確定">
 </form>
 
 <form action ="userinsertconfirm" method="POST">
 <input type="hidden" name ="user_id" value ="<%=user.getUserId() %>">
 <input type="hidden" name ="user_name" value ="<%=user.getUserName() %>">
 <input type="hidden" name ="cancel" value =1>
-<input type="submit" value ="キャンセル">
+<input class ="returnbookdeteilform"type="submit" value ="キャンセル">
 </form>
 </body>
 </html>

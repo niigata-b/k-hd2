@@ -5,27 +5,30 @@
 <head>
 <meta charset="UTF-8">
 <title>カテゴリー登録確認画面</title>
-<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="insert.css">
 </head>
 <body>
-	<h2>カテゴリー登録確認画面</h2> 
-	
 	<% 
 	BookBean book = (BookBean) request.getAttribute("book");  
 	%>  
-	
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
+<h1>カテゴリ登録確認　</h1>
+</div>
+<br>
+<p class="midasi">以下の内容で登録します。よろしいですか？</p>
+<br>
+<br>
 	<form action="categoryinsert" method="post">
-	以下のカテゴリ名を登録します。<br>
-	よろしいですか<br>
-	カテゴリー名:
-	<input type="text" name ="category_name" value="<%=book.getCategoryName() %>" readonly><br> 
-	<input type="submit" value="登録確定">
+	<span>カテゴリー名:</span>
+	<input class ="inputform"type="text" name ="category_name" value="<%=book.getCategoryName() %>" readonly><br> 
+	<input class ="bookdeleteform"type="submit" value="登録確定">
 	</form> 
 	
 	<form action="categoryinsertconfirm" method="post"> 
 	<input type="hidden" name ="category_name" value="<%=book.getCategoryName() %>">
 	<input type="hidden" name ="cancel" value=1>
-	<input type="submit" value="キャンセル">
+	<input class ="returnbookdeteilform"type="submit" value="キャンセル">
 	</form> 
 	
 </body>

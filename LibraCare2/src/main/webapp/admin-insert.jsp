@@ -15,7 +15,7 @@
 <br>
 
 <form action="admininsertconfirm" method="post">
-
+<p class="midasi">登録したい管理者の情報を入力しください。</p>
 <%
 		AdminBean admin = (AdminBean)request.getAttribute("admin");
 		String admin_id = "";

@@ -14,6 +14,20 @@ body {
 	padding:0;
 }
 
+.midasi{
+	margin-top: -10px;
+	margin-bottom: 3px;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#categoryname{
+	position: absolute;
+	margin-left: -210px;
+	top:360px;
+}
+
+
 img {
 	margin-top:15px;
 }
@@ -68,6 +82,14 @@ h1 {
   display: inline;
   position:absolute;
   right: 680px;
+  bottom: 320px;
+}
+
+.selectcate {
+  padding:1em 2em;
+  display: inline;
+  position:absolute;
+  right:600px;
   top: 350px;
 }
 
@@ -161,4 +183,116 @@ span {
 .insertformlogin:active {
   transform: translateY(2px) translateX(1px);
   box-shadow: 0 0 0 0 black;
+}
+
+.bookinsertform {
+  display: inline;
+  position:absolute;
+  top:500px;
+  left:900px;
+  background-color: white;
+  color: black;
+  border-radius: 10em;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 2em 3em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid black;
+  box-shadow: 0 0 0 0 black;
+}
+
+.bookinsertform:hover {
+  transform: translateY(-4px) translateX(-2px);
+  box-shadow: 2px 5px 0 0 black;
+}
+
+.bookinsertform:active {
+  transform: translateY(2px) translateX(1px);
+  box-shadow: 0 0 0 0 black;
+}
+
+.returnbookmenuform {
+  display: inline;
+  position:absolute;
+  top:500px;
+  right:850px;
+  background-color: white;
+  color: black;
+  border-radius: 10em;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 2em 3em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid black;
+  box-shadow: 0 0 0 0 black;
+}
+
+.returnbookmenuform:hover {
+  transform: translateY(-4px) translateX(-2px);
+  box-shadow: 2px 5px 0 0 black;
+}
+
+.returnbookmenuform:active {
+  transform: translateY(2px) translateX(1px);
+  box-shadow: 0 0 0 0 black;
+}
+
+.bookdeleteform {
+  display: inline;
+  position:absolute;
+  top:530px;
+  left:900px;
+  background-color: white;
+  color: black;
+  border-radius: 10em;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 2em 3em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid black;
+  box-shadow: 0 0 0 0 black;
+}
+
+.bookdeleteform:hover {
+  transform: translateY(-4px) translateX(-2px);
+  box-shadow: 2px 5px 0 0 black;
+}
+
+.bookdeleteform:active {
+  transform: translateY(2px) translateX(1px);
+  box-shadow: 0 0 0 0 black;
+}
+
+.returnbookdeteilform {
+  display: inline;
+  position:absolute;
+  top:530px;
+  right:850px;
+  background-color: white;
+  color: black;
+  border-radius: 10em;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 2em 3em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid black;
+  box-shadow: 0 0 0 0 black;
+}
+
+.returnbookdeteilform:hover {
+  transform: translateY(-4px) translateX(-2px);
+  box-shadow: 2px 5px 0 0 black;
+}
+
+.returnbookdeteilform:active {
+  transform: translateY(2px) translateX(1px);
+  box-shadow: 0 0 0 0 black;
+}
+.selectcate2 {
+  display: inline;
+  padding:1em 2em;
 }

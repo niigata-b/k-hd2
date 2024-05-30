@@ -5,16 +5,26 @@
 <head>
 <meta charset="UTF-8">
 <title>カテゴリ削除画面</title>
-<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="insert.css">
 </head>
 <body> 
-	<% List<BookBean> categoryList = (List<BookBean>) request.getAttribute("categoryList");  
+	<% 
+	List<BookBean> categoryList = (List<BookBean>) request.getAttribute("categoryList");  
 	%>
-	<h2>消去するカテゴリー名を選択してください</h2>  
-	<form action="categorydeleteconfirm" method="post">
-	<select name="category_name">  
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
+<h1>カテゴリ削除　　　</h1>
+</div>
+<br>
+<br>
+<p class="midasi">削除したいカテゴリ名を選択してください。</p>
+<br>
+<br>
+<br>
+<form action="categorydeleteconfirm" method="post">
+<span>カテゴリ名：</span>
+<select class ="selectcate2" name="category_name">  
 	
-	 
 	<% 
 	for (BookBean book : categoryList) {  
 	%>  
@@ -22,10 +32,10 @@
 	<%} %>
 	</select>  
 
-	<input type="submit" value="カテゴリー名削除">  
+	<input class ="bookdeleteform" type="submit" value="カテゴリ名削除">  
 	</form>
-	<form action ="booklist" method="post"> 
-	<input type="submit" value="キャンセル">
+	<form action ="book-menu.jsp" method="post"> 
+	<input class ="returnbookdeteilform" type="submit" value="キャンセル">
 	</form>
 </body>
 </html>

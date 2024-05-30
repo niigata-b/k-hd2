@@ -13,7 +13,7 @@
 %>
 <div class ="subdiv">
 <img class ="submenu" src="6.png" width ="300px">
-<h1>管理者詳細　　</h1>
+<h1>ユーザ詳細　　</h1>
 <br>
 <br>
 <br>

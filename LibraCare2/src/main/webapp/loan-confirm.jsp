@@ -5,22 +5,27 @@
 <head>
 <meta charset="UTF-8">
 <title>貸出登録確認画面</title>
-<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="insert.css">
 </head>
 <body>
 <%
 	LendingBean lending = (LendingBean)request.getAttribute("lending");
 %>
-<h2>貸出・返却管理</h2>
-<h1>貸出登録確認画面</h1>
-以下の内容で登録します。<br>
-よろしいですか？
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
+<h1>貸出登録確認　　　</h1>
+</div>
+<br>
+<p class="midasi">以下の内容で登録します。よろしいですか？</p>
 
 <form action ="loan" method="POST">
-ユーザID：<input type="text" name ="user_id" value="<%=lending.getUserId() %>" readonly><br>
-ISBN：<input type="text" name ="isbn" value="<%=lending.getIsbn() %>" readonly><br>
-貸出個数：<input type="text" name ="lending_count" value="<%=lending.getLendingCount() %>" readonly><br>
-<input type ="submit" value="貸出登録確定">
+<span>ユーザID：</span>
+<input class ="inputform"type="text" name ="user_id" value="<%=lending.getUserId() %>" readonly><br>
+<span>　　ISBN：</span>
+<input class ="inputform"type="text" name ="isbn" value="<%=lending.getIsbn() %>" readonly><br>
+<span>貸出個数：</span>
+<input class ="inputform"type="text" name ="lending_count" value="<%=lending.getLendingCount() %>" readonly><br>
+<input class ="bookdeleteform"type ="submit" value="貸出登録確定">
 </form>
 
 <form action ="loanconfirm" method="POST">
@@ -28,7 +33,7 @@ ISBN：<input type="text" name ="isbn" value="<%=lending.getIsbn() %>" readonly>
 <input type="hidden" name ="isbn" value ="<%=lending.getIsbn() %>">
 <input type="hidden" name ="lending_count" value ="<%=lending.getLendingCount() %>">
 <input type="hidden" name ="cancel" value =1>
-<input type="submit" value ="キャンセル">
+<input class ="returnbookdeteilform"type="submit" value ="キャンセル">
 </form>
 </body>
 </html>

@@ -34,6 +34,7 @@
 <h1>貸出登録　　　　　</h1>
 </div>
 <br>
+<p class="midasi">登録したい貸出情報を入力してください。</p>
 <form action ="loanconfirm" method="POST">
 <%
 try {

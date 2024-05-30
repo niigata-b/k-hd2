@@ -28,7 +28,7 @@ try {
 <h1>ユーザ登録　　　　</h1>
 </div>
 <br>
-
+<p class="midasi">登録したいユーザの情報を入力してください。</p>
 <form action="userinsertconfirm" method="POST">
 <%
 try {

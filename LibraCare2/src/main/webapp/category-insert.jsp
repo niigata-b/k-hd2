@@ -5,45 +5,45 @@
 <head>
 <meta charset="UTF-8">
 <title>カテゴリ登録画面</title>
-<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="insert.css">
 </head>
 <body>
 	<%
-	
 	String messageNull = (String)request.getAttribute("messageNull"); 
 	BookBean book = (BookBean)request.getAttribute("book");
 	String category_name = "";
 	try {
 		category_name = book.getCategoryName();
 	} catch(Exception e) {
-		
 	}
 	%>
-	<h2>カテゴリー登録画面</h2>
-	新しく登録するカテゴリー名を入力してください
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
+<h1>カテゴリ登録　　　　</h1>
+</div>
+<br>
+<p class="midasi">登録したいカテゴリ名を入力しください。</p>
+<br>
 
-	<form action="categoryinsertconfirm" method="post">
-	<%
+<form action="categoryinsertconfirm" method="post">
+<%
 	try {
 	if(!(messageNull.equals(null))) {
-	%>
-
-		<%=messageNull %><br>
-
-		<%
+%>
+<p class="error"><%=messageNull %>　　　　</p>
+<%
 }
-
-}catch(NullPointerException e)
-{
-	
+}catch(NullPointerException e){
 }
 %>
-		<input class ="inputform" type="text" name="category_name" value="<%=category_name%>"> 
-		<input type="submit"value="カテゴリー名登録">
+<br>
+<br>
+<span>カテゴリ名：</span>
+	<input class ="inputform" type="text" name="category_name" value="<%=category_name%>"> 
+	<input class ="insertform" type="submit"value="カテゴリー名登録">
 	</form>
-
-	<form action="booklist" method="post">
-		<input type="submit" value="キャンセル">
+	<form action="book-menu.jsp" method="post">
+	<input class ="returnmenuform" type="submit" value="キャンセル">
 	</form>
 </body>
 </html>

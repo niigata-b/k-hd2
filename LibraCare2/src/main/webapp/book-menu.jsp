@@ -23,11 +23,11 @@
 </form>
 <br>
 <form action="category-insert.jsp" method="post">
-<input class ="btn" type="submit" value="カテゴリー登録">
+<input class ="btn" type="submit" value="カテゴリ登録">
 </form>
 
 <form action="categorydeletelist" method="post">
-<input class ="btn" type="submit" value="カテゴリー削除">
+<input class ="btn" type="submit" value="カテゴリ削除">
 </form>
 
 <form action ="top-menu.jsp" method = "POST">
