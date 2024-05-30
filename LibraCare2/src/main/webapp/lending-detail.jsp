@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>貸出中情報詳細画面</title>
-<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="list.css">
 </head>
 <body>
 <%
@@ -14,14 +14,25 @@
 <div class ="subdiv">
 <img class ="submenu" src="6.png" width ="300px">
 <h1>貸出情報詳細　　　　　</h1>
-ISBN：<%=lending.getIsbn() %><br>
-図書名：<%=lending.getBookName() %><br>
-ユーザID：<%=lending.getUserId() %><br>
-ユーザ名：<%=lending.getUserName() %><br>
-貸出個数：<%=lending.getLendingCount() %><br>
-貸出開始日：<%=lending.getStartDate() %><br>
-返却期限日：<%=lending.getDeadlineDate() %><br>
-期限超過フラグ：<%=lending.getExpiredFlag() %><br>
+
+<table>
+  <tr><th>ISBN</th></tr>
+  <tr><td><%=lending.getIsbn() %></td></tr>
+  <tr><th>図書名</th></tr>
+  <tr><td><%=lending.getBookName() %></td></tr>
+  <tr><th>ユーザID</th></tr>
+  <tr><td><%=lending.getUserId() %></td></tr>
+  <tr><th>ユーザ名</th></tr>
+  <tr><td><%=lending.getUserName() %></td></tr>
+  <tr><th>貸出個数</th></tr>
+  <tr><td><%=lending.getLendingCount() %></td></tr>
+  <tr><th>貸出開始日</th></tr>
+  <tr><td><%=lending.getStartDate() %></td></tr>
+  <tr><th>返却期限日</th></tr>
+  <tr><td><%=lending.getDeadlineDate() %></td></tr>
+  <tr><th>期限超過フラグ</th></tr>
+  <tr><td><%=lending.getExpiredFlag() %></td></tr>
+ </table>
 
 <form action ="returnconfirm" method="POST">
 <input type ="hidden" name ="isbn" value="<%=lending.getIsbn() %>">
@@ -36,7 +47,7 @@ ISBN：<%=lending.getIsbn() %><br>
 </form>
 
 <form action ="lendinglist" method="POST">
-<input type ="submit" value = "貸出中情報一覧に戻る">
+<input class ="returnmenu" type ="submit" value = "貸出中情報一覧に戻る">
 </form>
 </body>
 </html>
