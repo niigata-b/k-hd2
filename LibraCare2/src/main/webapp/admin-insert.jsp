@@ -15,9 +15,46 @@
 <br>
 
 <form action="admininsertconfirm" method="post">
+
+<%
+		AdminBean admin = (AdminBean)request.getAttribute("admin");
+		String admin_id = "";
+		String admin_name = "";
+		String password = "";
+		
+		try
+		{
+			admin_id = admin.getAdmin_id();
+		}
+		catch(NullPointerException e)
+		{
+			admin_id = "";
+		}
+		try
+		{
+			admin_name = admin.getAdmin_name();
+		}
+		catch(NullPointerException e)
+		{
+			admin_name = "";
+		}
+		try
+		{
+			password = admin.getPassword();
+		}
+		catch(NullPointerException e)
+		{
+			password = "";
+		}
+		
+	%>
+
+
+
 <%
 String messageNull = (String) request.getAttribute("messageNull");
 %>
+
 <%
 try {
 	if (!(messageNull.equals(null))) {
@@ -29,13 +66,14 @@ try {
 }
 %>
 <span>管理者ID：</span>
-<input class="inputform" type="text" name="admin_id" id="admin_id" onchange="adminIdJudge()"><br>
+<input class="inputform" type="text" name="admin_id" id="admin_id" onchange="adminIdJudge()"  value=<%=admin_id%>><br>
 <span>管理者名：</span>
-<input class="inputform" type="text" name="admin_name" id="admin_name"><br>
+<input class="inputform" type="text" name="admin_name" id="admin_name"  value=<%=admin_name%>><br>
 <span>パスワード名：</span>
-<input class ="inputform" type=password name="password" id="password"><br>
+<input class ="inputform" type=password name="password" id="password"  value=<%=password%>><br>
 <input class ="insertform" type="submit" value="登録">
 </form>
+
 <form action="admin-management-menu.jsp" method="post">
 <input class ="returnmenuform" type="submit" value="キャンセル">
 </form>

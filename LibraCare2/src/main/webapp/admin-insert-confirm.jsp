@@ -23,10 +23,13 @@
 <input type ="submit" value="登録確定">
 </form>
 
-<form action ="admin-insert.jsp" method="POST">
+<form action ="admininsertconfirm" method="POST">
 <input type="hidden" name ="admin_id" value ="<%=admin.getAdmin_id() %>">
 <input type="hidden" name ="admin_name" value ="<%=admin.getAdmin_name() %>">
 <input type="hidden" name ="password" value ="<%=admin.getPassword() %>">
+
+<input type="hidden" name ="cancel" value = 1>
+
 <input type="submit" value ="キャンセル">
 </form>
 </body>
