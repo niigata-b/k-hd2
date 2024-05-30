@@ -93,3 +93,12 @@ input:active {
   transform: translateY(2px) translateX(1px);
   box-shadow: 0 0 0 0 black;
 }
+
+#loginbtn {
+ font-size: 25px;
+ padding: 1em 2.5em;
+ margin-top: 40px;
+ margin-bottom: 20px;
+ margin-left: 20px;
+ margin-right: 20px;
+}
