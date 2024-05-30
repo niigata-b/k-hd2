@@ -49,6 +49,7 @@ public class AdminInsertConfirmServlet extends HttpServlet {
 		String admin_id = request.getParameter("admin_id");
 		String admin_name = request.getParameter("admin_name");
 		String password = request.getParameter("password");
+		int cancel = 0;
 		
 		String url  = "admin-insert-confirm.jsp";
 
@@ -59,7 +60,19 @@ public class AdminInsertConfirmServlet extends HttpServlet {
 		admin.setAdmin_name(admin_name);
 		admin.setPassword(password);
 
+		try {
+			cancel = Integer.parseInt(request.getParameter("cancel"));
+		}
+		catch(NumberFormatException e)
+		{
+			System.out.println("foiwe");
+		}
 		
+		if(cancel == 1) {
+			 url = "admin-insert.jsp";
+		}
+		
+	
 		
 		if(admin_id.equals("") || admin_name.equals("") || password.equals("")||password.length() < 8)
 		{
@@ -68,6 +81,7 @@ public class AdminInsertConfirmServlet extends HttpServlet {
 			url = "admin-insert.jsp";
 			request.setAttribute("messageNull",messageNull);
 		}
+		
 		
 		
 		// リクエストスコープへの属性の設定
