@@ -53,7 +53,7 @@ if(!(messageNull.equals(null))) {
 	
 }
 %>
-		ユーザID<input class ="inputform" type="text" name="user_id" value=<%=user_id %>><br>
+		ユーザID<input class ="inputform" type="text" name="user_id" value=<%=user_id %> onchange="userIdJudge()"><br>
 		ユーザ名<input class ="inputform" type="text" name="user_name" value=<%=user_name %>><br>
 		<input type="submit" value="登録"> 
 	</form>
@@ -61,6 +61,22 @@ if(!(messageNull.equals(null))) {
 	<form action="user-menu.jsp" method="POST">
 	<input type="submit" value="ユーザ管理メニューに戻る">
 	</form>
+	
+		<script>
+		function userIdJudge() {
+			var userIdJudge = document.getElementById('user_id').value; // HTML要素オブジェクトを取得
+
+			if (userIdJudge.match(/^[A-Za-z0-9]+$/)
+					|| (userIdJudge.indexOf('-') != -1)) {
+				return true;
+				
+			} else {
+				alert('ユーザIDは半角英数字で入力してください');
+				document.getElementById('user_id').value = '';		
+			}
+		}
+	</script>
+	
 	
 </body>
 </html>

@@ -85,7 +85,7 @@ if(!(messageNum.equals(null))) {
 
 <form action ="bookinsertconfirm" method="POST">
 ISBN
-<input class ="inputform" type="text" name="isbn" value ="<%=isbn%>"><br>
+<input class ="inputform" type="text" name="isbn" value ="<%=isbn%>" id = "isbn" onchange="isbnJudge()"><br>
 図書名
 <input class ="inputform" type="text" name="book_name" value ="<%=book_name%>"><br>
 カテゴリ名
@@ -100,4 +100,35 @@ ISBN
 <input type="submit"value="キャンセル">
 </form>
 </body>
+
+<script>
+		function isbnJudge() {
+			var isbnJudge = document.getElementById('isbn').value; // HTML要素オブジェクトを取得
+			var isbn = "0";
+			const test="あいうえおかきく";
+			const person = "山田太郎（20才）"
+			
+			
+			//if(isbnJudge.length >= 13){
+				
+				person.substring(0, 5)
+				console.log(person);
+				//document.getElementById("isbn").value = isbn;
+				
+			//}
+			
+			//if (isbnJudge.match(/^[0-9]+$/)) {      
+				//return true;
+				
+			//} else {
+				//alert('ISBNは半角数字13桁で入力してください');
+				//document.getElementById('isbn').value = '';
+							
+			//}
+
+		
+		}
+	</script>
+
+
 </html>
