@@ -5,31 +5,48 @@
 <head>
 <meta charset="UTF-8">
 <title>ユーザ詳細画面</title>
-<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="list.css">
 </head>
 <body>
 <%
 	UserBean user = (UserBean)request.getAttribute("user");
 %>
-<h1>ユーザ詳細画面</h1>
-ユーザID：<%=user.getUserId() %><br>
-ユーザ名：<%=user.getUserName() %><br>
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
+<h1>管理者詳細　　</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<table>
+	<tr>
+		<th>ユーザID</th>
+		<td><%=user.getUserId() %></td>
+	</tr>
+	<tr>
+		<th>ユーザ名</th>
+		<td><%=user.getUserName() %></td>
+	</tr>
+</table>
 
 <form action ="userupdateform" method="POST">
 <input type ="hidden" name ="user_id" value ="<%=user.getUserId() %>">
 <input type ="hidden" name ="user_name" value="<%=user.getUserName() %>">
-<input type ="submit" value = "ユーザ情報変更">
+<input class = "updbtn" type ="submit" value = "変更">
 </form>
 
 <form action ="userdeleteconfirm" method="POST">
 <input type ="hidden" name ="user_id" value ="<%=user.getUserId() %>">
 <input type ="hidden" name ="user_name" value="<%=user.getUserName() %>">
-<input type ="submit" value = "ユーザ情報削除">
+<input class = "deletebtn" type ="submit" value = "削除">
 </form>
 
-
 <form action ="userlist" method="POST">
-<input type ="submit" value = "ユーザ一覧に戻る">
+<input class ="returnadminmenu" type ="submit" value = "ユーザ一覧に戻る">
 </form>
 </body>
 </html>

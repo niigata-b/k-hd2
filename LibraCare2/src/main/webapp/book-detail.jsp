@@ -5,47 +5,72 @@
 <head>
 <meta charset="UTF-8">
 <title>図書詳細画面</title>
-<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="list.css">
 </head>
 <body>
-	<h2>図書管理</h2>
-	<h1>図書詳細画面</h1>
 	<% 
 	BookBean bookdetail = (BookBean) request.getAttribute("bookDetail");
 	%> 
-	ISBN：
-	<%=bookdetail.getIsbn() %><br>
-	図書名：
-	<%=bookdetail.getBookName() %><br>
-	カテゴリー名：
-	<%=bookdetail.getCategoryName() %><br>
-	個数：
-	<%=bookdetail.getBookCount() %><br>
-	総個数：
-	<%=bookdetail.getTotalBookCount() %><br>
-	総貸出個数：
-	<%=bookdetail.getTotalLendingCount() %><br>
-	貸出中フラグ：
-	<%=bookdetail.getLendingFlag() %> <br>
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
+<h1>図書詳細　　　</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<table>
+	<tr>
+		<th>ISBN</th>
+		<td><%=bookdetail.getIsbn() %></td>
+	</tr>
+	<tr>
+		<th>図書名</th>
+		<td><%=bookdetail.getBookName() %></td>
+	</tr>
+	<tr>
+		<th>カテゴリ名</th>
+		<td><%=bookdetail.getCategoryName() %></td>
+	</tr>
+	<tr>
+		<th>個数</th>
+		<td><%=bookdetail.getBookCount() %></td>
+	</tr>
+	<tr>
+		<th>総個数</th>
+		<td><%=bookdetail.getTotalBookCount() %></td>
+	</tr>
+	<tr>
+		<th>総貸出個数</th>
+		<td><%=bookdetail.getTotalLendingCount() %></td>
+	</tr>
+	<tr>
+		<th>貸出中フラグ</th>
+		<td><%=bookdetail.getLendingFlag() %></td>
+	</tr>
+</table>
 
-	<form action="bookupdateform" method ="POST">
-		<input type="hidden" name ="isbn" value="<%=bookdetail.getIsbn() %>">
-		<input type="hidden" name ="book_name" value="<%=bookdetail.getBookName() %>">
-		<input type="hidden" name ="category_name" value="<%=bookdetail.getCategoryName() %>">
-		<input type="hidden" name ="book_count" value="<%=bookdetail.getBookCount() %>">
-		<input type="hidden" name ="total_book_count" value="<%=bookdetail.getTotalBookCount() %>">
-		<input type="hidden" name ="lending_flag" value="<%=bookdetail.getLendingFlag() %>">
-		<input type="submit" value="図書詳細情報変更">
-	</form>
-	<form action="bookdeleteconfirm" method ="POST">
-		<input type="hidden" name ="isbn" value="<%=bookdetail.getIsbn() %>">
-		<input type="hidden" name ="book_name" value="<%=bookdetail.getBookName() %>">
-		<input type="hidden" name ="category_name" value="<%=bookdetail.getCategoryName() %>">
-		<input type="hidden" name ="book_count" value="<%=bookdetail.getBookCount() %>">
-		<input type="submit" value="図書詳細情報削除">
-	</form>
-	<form action="booklist" method="POST">
-		<input type="submit" value="図書一覧画面に戻る">
-	</form>
+<form action="bookupdateform" method ="POST">
+<input type="hidden" name ="isbn" value="<%=bookdetail.getIsbn() %>">
+<input type="hidden" name ="book_name" value="<%=bookdetail.getBookName() %>">
+<input type="hidden" name ="category_name" value="<%=bookdetail.getCategoryName() %>">
+<input type="hidden" name ="book_count" value="<%=bookdetail.getBookCount() %>">
+<input type="hidden" name ="total_book_count" value="<%=bookdetail.getTotalBookCount() %>">
+<input type="hidden" name ="lending_flag" value="<%=bookdetail.getLendingFlag() %>">
+<input class = "updbtn2" type="submit" value="変更">
+</form>
+
+<form action="bookdeleteconfirm" method ="POST">
+<input type="hidden" name ="isbn" value="<%=bookdetail.getIsbn() %>">
+<input type="hidden" name ="book_name" value="<%=bookdetail.getBookName() %>">
+<input type="hidden" name ="category_name" value="<%=bookdetail.getCategoryName() %>">
+<input type="hidden" name ="book_count" value="<%=bookdetail.getBookCount() %>">
+<input class = "deletebtn2" type="submit" value="削除">
+</form>
+
+<form action="booklist" method="POST">
+<input class ="returnbookmenu" type="submit" value="図書一覧画面に戻る">
+</form>
 </body>
 </html>

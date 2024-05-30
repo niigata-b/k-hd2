@@ -13,26 +13,47 @@
 %>
 <div class ="subdiv">
 <img class ="submenu" src="6.png" width ="300px">
-<h1>貸出情報詳細　　　　　</h1>
-
+<h1>貸出情報詳細</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <table>
-  <tr><th>ISBN</th></tr>
-  <tr><td><%=lending.getIsbn() %></td></tr>
-  <tr><th>図書名</th></tr>
-  <tr><td><%=lending.getBookName() %></td></tr>
-  <tr><th>ユーザID</th></tr>
-  <tr><td><%=lending.getUserId() %></td></tr>
-  <tr><th>ユーザ名</th></tr>
-  <tr><td><%=lending.getUserName() %></td></tr>
-  <tr><th>貸出個数</th></tr>
-  <tr><td><%=lending.getLendingCount() %></td></tr>
-  <tr><th>貸出開始日</th></tr>
-  <tr><td><%=lending.getStartDate() %></td></tr>
-  <tr><th>返却期限日</th></tr>
-  <tr><td><%=lending.getDeadlineDate() %></td></tr>
-  <tr><th>期限超過フラグ</th></tr>
-  <tr><td><%=lending.getExpiredFlag() %></td></tr>
- </table>
+  <tr>
+  	<th>ISBN</th>
+  	<td><%=lending.getIsbn() %></td>
+  </tr>
+  <tr>
+  	<th>図書名</th>
+  	<td><%=lending.getBookName() %></td>
+  </tr>
+  <tr>
+  	<th>ユーザID</th>
+  	<td><%=lending.getUserId() %></td>
+  </tr>
+  <tr>
+  	<th>ユーザ名</th>
+  	<td><%=lending.getUserName() %></td>
+  </tr>
+  <tr>
+  	<th>貸出個数</th>
+    <td><%=lending.getLendingCount() %></td>
+  </tr>
+  <tr>
+  	<th>貸出開始日</th>
+  	<td><%=lending.getStartDate() %></td>
+  </tr>
+  <tr>
+  	<th>返却期限日</th>
+  	<td><%=lending.getDeadlineDate() %></td>
+  </tr>
+  <tr>
+  	<th>期限超過フラグ</th>
+  	<td><%=lending.getExpiredFlag() %></td>
+  </tr>
+</table>
 
 <form action ="returnconfirm" method="POST">
 <input type ="hidden" name ="isbn" value="<%=lending.getIsbn() %>">
@@ -43,11 +64,11 @@
 <input type ="hidden" name ="start_date" value="<%=lending.getStartDate() %>">
 <input type ="hidden" name ="deadline_date" value="<%=lending.getDeadlineDate() %>">
 <input type ="hidden" name ="expired_flag" value="<%=lending.getExpiredFlag() %>">
-<input type ="submit" value = "返却">
+<input class = "returnbtn" type ="submit" value = "返却">
 </form>
 
 <form action ="lendinglist" method="POST">
-<input class ="returnmenu" type ="submit" value = "貸出中情報一覧に戻る">
+<input class ="returnloanmenu" type ="submit" value = "貸出中情報一覧に戻る">
 </form>
 </body>
 </html>
