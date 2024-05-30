@@ -18,11 +18,11 @@
 <input class ="btn" type="submit" value="　図書一覧　">
 </form>
 
-<form action="bookinsertcategorylist" meshod="post">
+<form action="bookinsertcategorylist" method="post">
 <input class ="btn" type="submit" value="　図書登録　">
 </form>
 <br>
-<form action="category-insert.jsp">
+<form action="category-insert.jsp" method="post">
 <input class ="btn" type="submit" value="カテゴリー登録">
 </form>
 
