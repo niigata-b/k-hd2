@@ -18,7 +18,7 @@
 <input class ="btn" type="submit" value="　図書一覧　">
 </form>
 
-<form action="bookinsertcategorylist">
+<form action="bookinsertcategorylist" method="post">
 <input class ="btn" type="submit" value="　図書登録　">
 </form>
 <br>
