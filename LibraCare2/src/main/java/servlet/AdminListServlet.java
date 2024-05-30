@@ -54,26 +54,23 @@ public class AdminListServlet extends HttpServlet {
 		
 		AdminDAO dao = new AdminDAO(); 
 	
-				try {
-					adminList = dao.selectAll();
-				} catch (ClassNotFoundException e) {
-					// TODO 自動生成された catch ブロック
-					e.printStackTrace();
-				} catch (SQLException e) {
-					// TODO 自動生成された catch ブロック
-					e.printStackTrace();
-				}
+		try {
+			adminList = dao.selectAll();
+		} catch (ClassNotFoundException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
 	
-			if (adminList.size()!=0) {
-
-
-			 request.setAttribute("adminList",adminList);
-				url = "admin-list.jsp"; //管理者一覧へ
-
-			} else {
+		if (adminList.size()!=0) {
+			request.setAttribute("adminList",adminList);
+			url = "admin-list.jsp"; //管理者一覧へ
+		} else {
 				
-				url = "admin-list-failure.jsp";//管理者一覧表示失敗画面へ
-			} 
+			url = "admin-list-failure.jsp";//管理者一覧表示失敗画面へ
+		} 
 	
 
 		// リクエストの転送

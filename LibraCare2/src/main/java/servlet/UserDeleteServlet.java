@@ -57,13 +57,12 @@ public class UserDeleteServlet extends HttpServlet {
 		
 		UserDAO dao = new UserDAO();
 		
+		// リクエストスコープへの属性の設定
+		request.setAttribute("user", user);
+		
 		try {
 			// DAOの利用
 			count = dao.userdelete(user);
-
-			// リクエストスコープへの属性の設定
-			request.setAttribute("user", user);
-
 			if(count != 0)
 			{
 				url = "user-delete-result.jsp";
@@ -72,9 +71,8 @@ public class UserDeleteServlet extends HttpServlet {
 			{
 				url = "user-delete-failure.jsp";
 			}
-
 		}catch (SQLException | ClassNotFoundException e) {
-			e.printStackTrace();
+			url = "user-delete-failure.jsp";
 		}
 		
 			// リクエストの転送

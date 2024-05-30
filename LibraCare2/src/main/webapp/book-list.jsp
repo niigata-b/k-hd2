@@ -31,17 +31,16 @@
 <h1>図書一覧　　　</h1>
 </div>
 <br>
-
 <p class ="searchp">検索したい図書名またはカテゴリ名を入力してください。</p>
 <form action="booksearch" method="post">
-<input class ="inputform" type="search" name="book_name" value="<%=book_name%>">
-<input class ="inputform" type="hidden" name="category_name" value="<%=category_name%>">   
-<input class = "searchbtn" type="submit" value="検索">
+<input class ="inputformbook" type="search" name="book_name" value="<%=book_name%>">
+<input type="hidden" name="category_name" value="<%=category_name%>">   
+<input class = "searchbtnbook" type="submit" value="検索">
 </form> 
 	
 <form action="categorysearch" method="post">
 <input class ="inputform" type="hidden" name="book_name" value="<%=book_name%>">
-<select name="category_name"> 
+<select class ="selectcategory" name="category_name"> 
 <option><%=category_name%></option>
 <% 
 for (BookBean category : categoryList) {  
@@ -66,7 +65,7 @@ for (BookBean category : categoryList) {
 <tr>
 <th>ISBN</th>
 <th>図書名</th>
-<th>カテゴリー名</th>
+<th>カテゴリ名</th>
 <th>個数</th>
 <th>貸出中フラグ</th>
 <th></th>
@@ -94,17 +93,8 @@ for (BookBean category : categoryList) {
 </table>
 </div>
 
-<form action="category-insert.jsp">
-<input type="submit" value="カテゴリー登録">
-</form>
-
-<form action="categorydeletelist" method="post">
-<input type="submit" value="カテゴリー削除">
-</form>
-
 <form action="book-menu.jsp" method="post">
-<input type="submit" value="図書管理メニューに戻る">
+<input class ="returnmenu" type="submit" value="図書管理メニューに戻る">
 </form>
-
 </body>
 </html>

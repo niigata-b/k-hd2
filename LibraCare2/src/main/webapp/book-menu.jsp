@@ -21,6 +21,14 @@
 <form action="book-insert.jsp">
 <input class ="btn" type="submit" value="　図書登録　">
 </form>
+<br>
+<form action="category-insert.jsp">
+<input class ="btn" type="submit" value="カテゴリー登録">
+</form>
+
+<form action="categorydeletelist" method="post">
+<input class ="btn" type="submit" value="カテゴリー削除">
+</form>
 
 <form action ="top-menu.jsp" method = "POST">
 <input class ="btn" type ="submit" value = "トップメニューに戻る">

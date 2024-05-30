@@ -12,11 +12,11 @@
 	BookBean book = (BookBean)request.getAttribute("book");
 %>
 	
-	以下のカテゴリー名を登録しました。<br> 
+	以下のカテゴリ名を登録しました。<br> 
 	<%=book.getCategoryName() %>  
 	
-	<form action="booklist" method="post"> 
-	<input type="submit" value="図書一覧に戻る">
+	<form action="book-menu.jsp" method="post"> 
+	<input type="submit" value="図書メニューに戻る">
 	</form>
 </body>
 </html>
