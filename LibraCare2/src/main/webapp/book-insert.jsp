@@ -104,29 +104,26 @@ ISBN
 <script>
 		function isbnJudge() {
 			var isbnJudge = document.getElementById('isbn').value; // HTML要素オブジェクトを取得
-			var isbn = "0";
-			const test="あいうえおかきく";
-			const person = "山田太郎（20才）"
-			
-			
-			//if(isbnJudge.length >= 13){
+			var isbn;
+						
+			if(isbnJudge.length < 13){
+				alert('ISBNは半角数字13桁で入力してください');
+				document.getElementById('isbn').value = '';
 				
-				person.substring(0, 5)
-				console.log(person);
-				//document.getElementById("isbn").value = isbn;
+			}else if (isbnJudge.length >= 13){
+					isbn = isbnJudge.substr(0,13);
+					document.getElementById("isbn").value = isbn;
+					
+				} 
 				
-			//}
-			
-			//if (isbnJudge.match(/^[0-9]+$/)) {      
-				//return true;
+			if (isbnJudge.match(/^[0-9]+$/)) {      
+				return true;
 				
-			//} else {
-				//alert('ISBNは半角数字13桁で入力してください');
-				//document.getElementById('isbn').value = '';
+			} else {
+				alert('ISBNは半角数字13桁で入力してください');
+				document.getElementById('isbn').value = '';
 							
-			//}
-
-		
+			}
 		}
 	</script>
 
