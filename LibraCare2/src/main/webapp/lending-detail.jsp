@@ -11,8 +11,9 @@
 <%
 	LendingBean lending = (LendingBean)request.getAttribute("lending");
 %>
-<h2>貸出・返却管理</h2>
-<h1>貸出中情報詳細画面</h1>
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
+<h1>貸出情報詳細　　　　　</h1>
 ISBN：<%=lending.getIsbn() %><br>
 図書名：<%=lending.getBookName() %><br>
 ユーザID：<%=lending.getUserId() %><br>

@@ -39,23 +39,23 @@
 try {
 if(!(messageNull.equals(null))) {
 %>
-<%=messageNull %><br>
+<p class="error"><%=messageNull %></p>
 <%
 }
 }catch(NullPointerException e){
 }
 %>
-<div id ="loaninp">
-ユーザID：
+<div class ="loaninp">
+<span>ユーザID：</span>
 <input class ="inputform" type="text" name="user_id" value ="<%=user_id%>" placeholder="ユーザID"><br>
-　　ISBN：
+<span>　　ISBN：</span>
 <input class ="inputform" type="text" name="isbn" value ="<%=isbn%>" placeholder="ISBN"><br>
 </div>
 <%
 try {
 if(!(messageNum.equals(null))) {
 %>
-<%=messageNum %><br>
+<p class="error"><%=messageNum %></p>
 <%
 }
 }catch(NullPointerException e){	
@@ -76,6 +76,7 @@ for(int i = 1; i < 4; i++) {
 %>
 </select>
 </div>
+
 <input class ="insertform" type="submit"value="貸出登録">
 </form>
 

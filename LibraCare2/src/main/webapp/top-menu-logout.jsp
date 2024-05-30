@@ -5,13 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>ログアウト画面</title>
-<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="insert.css">
 </head>
 <body>
-<h1>ログアウトしました</h1>
-<!-- aa -->
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
+</div>
+<p id ="logout">ログアウトしました。　　　　　</p>
 <form action ="top-menu-login.jsp" method="post">
-	<input type = "submit" value = "ログイン">
+<input class = "insertformlogin" type = "submit" value = "ログイン">
 </form>
 </body>
 </html>
