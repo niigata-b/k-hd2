@@ -8,6 +8,9 @@
 <link rel="stylesheet" href="style1.css">
 </head>
 <body>
+<% 
+UserBean user = (UserBean)request.getAttribute("user");
+%>
 <h1>ユーザ削除失敗画面</h1>
 <h2>ユーザ削除できませんでした</h2>
 <form action ="userdetail" method ="POST">

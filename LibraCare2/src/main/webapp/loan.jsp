@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>貸出登録画面</title>
-<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="insert.css">
 </head>
 <body>
 <%
@@ -15,101 +15,73 @@
 	String user_id = "";
 	String isbn = "";
 	int lending_count = 1;
-	try
-	{
+	try {
 		user_id = lending.getUserId();
-	}
-	catch(NullPointerException e)
-	{
+	} catch(NullPointerException e) {
 		user_id = "";
-	}
-	try
-	{
+	}try {
 		isbn = lending.getIsbn();
-	}
-	catch(NullPointerException e)
-	{
+	} catch(NullPointerException e){
 		isbn = "";
-	}
-	try
-	{
+	}try {
 		lending_count = lending.getLendingCount();
-	}
-	catch(NullPointerException e)
-	{
+	} catch(NullPointerException e) {
 		lending_count = 1;
 	}
 %>
-<h2>貸出・返却管理</h2>
-<br>
-<h1>貸出登録画面</h1>
-<hr>
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
+<h1>貸出登録　　　　　</h1>
+</div>
 <br>
 <form action ="loanconfirm" method="POST">
 <%
 try {
 if(!(messageNull.equals(null))) {
 %>
-
 <%=messageNull %><br>
-
 <%
 }
-
-}catch(NullPointerException e)
-{
-	
+}catch(NullPointerException e){
 }
 %>
 <div id ="loaninp">
 ユーザID：
-<input class ="inputformloan" type="text" name="user_id" value ="<%=user_id%>"><br>
+<input class ="inputform" type="text" name="user_id" value ="<%=user_id%>" placeholder="ユーザID"><br>
 　　ISBN：
-<input class ="inputformloan" type="text" name="isbn" value ="<%=isbn%>"><br>
+<input class ="inputform" type="text" name="isbn" value ="<%=isbn%>" placeholder="ISBN"><br>
 </div>
 <%
 try {
 if(!(messageNum.equals(null))) {
 %>
-
 <%=messageNum %><br>
-
 <%
 }
-
-}catch(NullPointerException e)
-{
-	
+}catch(NullPointerException e){	
 }
 %>
 <div id ="lendingcount">
-<br>
-<br>
-貸出個数　　　　　
-<select class ="selectbox" name="lending_count">
+
+<p class ="lendcnt">貸出個数：</p>
+
+<select class ="selectnum" name="lending_count">
 <option><%=lending_count%></option>
 <%
 for(int i = 1; i < 4; i++) {
 %>
-
 <option><%=i %></option>
-
 <%
 }
 %>
 </select>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div id = "loanbtn">
-<input type="submit"value="貸出登録">
+<input class ="insertform" type="submit"value="貸出登録">
 </form>
+
 <form action ="lending-return-menu.jsp">
-<input type="submit"value="キャンセル">
+<input class ="returnmenuform" type="submit"value="キャンセル">
 </form>
-</div>
+
 </body>
 </html>

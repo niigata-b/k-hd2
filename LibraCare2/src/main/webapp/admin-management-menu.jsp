@@ -14,12 +14,12 @@
 </div>
 <br>
 
-<form action="admin-insert.jsp" method="post">
-<input class ="btn" type="submit" value="管理者登録">
-</form>
-
 <form action="adminlist" method="post">
 <input class ="btn" type="submit" value="管理者一覧">
+</form>
+
+<form action="admin-insert.jsp" method="post">
+<input class ="btn" type="submit" value="管理者登録">
 </form>
 
 <form action ="menu" method = "POST">

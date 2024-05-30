@@ -83,7 +83,7 @@ for (BookBean category : categoryList) {
 	<td>
 		<form action="bookdetail" method="post">
 			<input type="hidden" name="isbn" value="<%=book.getIsbn()%>">
-			<input type="submit" value="詳細">
+			<input class ="detailbtn" type="submit" value="詳細">
 		</form>
 	</td>
 </tr>

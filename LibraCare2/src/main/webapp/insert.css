@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+body {
+    text-align: center;
+    background-color: #e6ffd6;
+}
+
+.subdiv {
+	height: 125px;
+	background-color: rgb(255, 255, 255);
+	margin-left: -10px;
+	margin-right: -10px;
+	margin-top: -10px;
+	padding:0;
+}
+
+img {
+	margin-top:15px;
+}
+
+.submenu {
+	display: inline;
+	position: absolute;
+	left :25px;
+}
+
+h1 {
+	font-size: 60px;
+	display:inline;
+	position: absolute;
+	top:-27px;
+	right:472px;
+}
+
+.inputform {
+  margin-top :25px;
+  margin-bottom: 25px;
+  text-transform:none;
+  padding: 10px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  font-size: 16px;
+  color: #555;
+  outline: none;
+}
+
+.inputform:focus {
+  border-color: rgb(128, 255, 128);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.selectnum {
+  padding:1em 2em;
+  display: inline;
+  position:absolute;
+  right: 725px;
+  top: 340px;
+}
+
+.returnmenuform {
+  margin-top: 1px;
+  margin-right:-1100px;
+  background-color: white;
+  color: black;
+  border-radius: 10em;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 1.7em 2.7em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid black;
+  box-shadow: 0 0 0 0 black;
+}
+
+.returnmenuform:hover {
+  transform: translateY(-4px) translateX(-2px);
+  box-shadow: 2px 5px 0 0 black;
+}
+
+.returnmenuform:active {
+  transform: translateY(2px) translateX(1px);
+  box-shadow: 0 0 0 0 black;
+}
+
+.lendcnt {
+  display: inline;
+  position:absolute;
+  left:600px
+}

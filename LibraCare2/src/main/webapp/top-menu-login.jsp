@@ -8,6 +8,11 @@
 <link rel="stylesheet" href="style1.css">
 </head>
 <body>
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
+<h1>ユーザ管理メニュー</h1>
+</div>
+<br>
 <div>
 <h2>LibraCare</h2>
 <br>

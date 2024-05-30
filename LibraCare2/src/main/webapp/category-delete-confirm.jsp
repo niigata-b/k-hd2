@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>カテゴリ登録確認画面</title>
+<title>カテゴリ削除確認画面</title>
 <link rel="stylesheet" href="style1.css">
 </head>
 <body>
-	<h2>カテゴリー登録確認画面</h2> 
+	<h2>カテゴリー削除確認画面</h2> 
 	
 	<% 
 	BookBean book = (BookBean) request.getAttribute("book");  

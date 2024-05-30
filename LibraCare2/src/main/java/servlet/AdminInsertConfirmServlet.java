@@ -59,7 +59,7 @@ public class AdminInsertConfirmServlet extends HttpServlet {
 		admin.setAdmin_name(admin_name);
 		admin.setPassword(password);
 
-
+		
 		
 		if(admin_id.equals("") || admin_name.equals("") || password.equals("")||password.length() < 8)
 		{
