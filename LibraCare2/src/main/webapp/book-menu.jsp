@@ -18,7 +18,7 @@
 <input class ="btn" type="submit" value="　図書一覧　">
 </form>
 
-<form action="book-insert.jsp">
+<form action="bookinsertcategorylist">
 <input class ="btn" type="submit" value="　図書登録　">
 </form>
 <br>

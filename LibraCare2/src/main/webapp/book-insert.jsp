@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import = "model.entity.BookBean"%>
+    pageEncoding="UTF-8" import ="java.util.List,model.entity.BookBean"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +9,8 @@
 </head>
 <body>
 <%
-	BookBean book = (BookBean)request.getAttribute("book");
+	BookBean book = (BookBean)request.getAttribute("book"); 
+ 	List<BookBean> categoryList = (List<BookBean>) request.getAttribute("categoryList");  
 	String messageNum = (String)request.getAttribute("messageNum");
 	String messageNull = (String)request.getAttribute("messageNull");
 	String isbn = "";
@@ -87,9 +88,16 @@ if(!(messageNum.equals(null))) {
 ISBN
 <input class ="inputform" type="text" name="isbn" value ="<%=isbn%>" id = "isbn" onchange="isbnJudge()"><br>
 図書名
-<input class ="inputform" type="text" name="book_name" value ="<%=book_name%>"><br>
-カテゴリ名
-<input class ="inputform" type="text" name="category_name" value ="<%=category_name%>"><br>
+<input class ="inputform" type="text" name="book_name" value ="<%=book_name%>"><br> 
+
+カテゴリ名 
+<select name="category_name">  
+	<% 
+	for (BookBean booka : categoryList) {  
+	%>  
+	<option><%=booka.getCategoryName()%></option> 
+	<%} %>
+	</select>  
 個数
 <input class ="inputform" type="text" name="book_count" value ="<%=book_count%>"><br>
 
