@@ -5,15 +5,19 @@
 <head>
 <meta charset="UTF-8">
 <title>管理者登録失敗画面</title>
-<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="insert.css">
 </head>
 <body>
-	<h2>管理者登録</h2>
-	<h1>管理者登録失敗画面</h1>
-	<p style="color: red;">管理者登録できませんでした</p>
-
-	<form action="admin-insert.jsp" method="post">
-		<input type="submit" value="管理者登録画面に戻る">
-	</form>
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
+<h1>管理者登録失敗　　</h1>
+</div>
+<br>
+<br>
+<br>
+<h2>管理者の登録に失敗しました。</h2>
+<form action="admin-insert.jsp" method="post">
+<input class ="bookdeleteform"type="submit" value="管理者登録画面に戻る">
+</form>
 </body>
 </html>

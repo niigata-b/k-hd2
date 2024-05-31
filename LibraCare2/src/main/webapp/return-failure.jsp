@@ -5,12 +5,20 @@
 <head>
 <meta charset="UTF-8">
 <title>返却失敗画面</title>
-<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="insert.css">
 </head>
 <body>
-<h2>貸出・返却管理</h2>
-<h1>返却失敗画面</h1>
-返却に失敗しました。
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
+<h1>返却失敗</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h2>返却に失敗しました。 </h2> 
 <form action ="lendingdetail" method="POST">
 <input type ="hidden" name ="isbn" value="<%=lending.getIsbn() %>">
 <input type ="hidden" name ="book_name" value="<%=lending.getBookName() %>">
@@ -20,6 +28,6 @@
 <input type ="hidden" name ="start_date" value="<%=lending.getStartDate() %>">
 <input type ="hidden" name ="deadline_date" value="<%=lending.getDeadlineDate() %>">
 <input type ="hidden" name ="expired_flag" value="<%=lending.getExpiredFlag() %>">
-<input type ="submit" value="貸出情報詳細画面に戻る">
+<input class ="bookdeleteform"type ="submit" value="貸出情報詳細画面に戻る">
 </body>
 </html>

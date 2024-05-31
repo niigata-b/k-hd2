@@ -5,18 +5,17 @@
 <head>
 <meta charset="UTF-8">
 <title>管理者一覧表示失敗画面</title>
-<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="insert.css">
 </head>
 <body>
-	<h2>管理者管理</h2>
-	<h1>管理者一覧表示失敗画面</h1>
-
-	<p font color="red">管理者一覧を表示できませんでした</p>
-	<br>
-
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
+<h1>管理者一覧表示失敗</h1>
+<br>
+<br>
+<br>
+	<h2>管理者一覧を表示できませんでした。</h2>
 	<form action="admin-management-menu.jsp" method="post"></form>
-	<input type = "submit" value = "管理者管理メニューに戻る">
-
-
+	<input class ="bookdeleteform"type = "submit" value = "管理者管理メニューに戻る">
 </body>
 </html>

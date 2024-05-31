@@ -4,14 +4,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>貸出中情報未登録画面</title>
-<link rel="stylesheet" href="style1.css">
+<title>貸出中情報一覧表示失敗画面</title>
+<link rel="stylesheet" href="insert.css">
 </head>
 <body>
-<h2>貸出・返却管理</h2>
-<h1>貸出中情報未登録画面</h1>
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
+<h1>貸出中情報一覧表示失敗</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h2>貸出中情報一覧を表示できませんでした。 </h2> 
 <form action ="lending-return-menu.jsp" method="POST">
-<input type ="submit" value="貸出・返却メニューに戻る">
+<input class ="bookdeleteform"type ="submit" value="貸出・返却メニューに戻る">
 </form>
 </body>
 </html>

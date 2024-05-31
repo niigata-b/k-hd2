@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>管理者変更失敗画面</title>
-<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="insert.css">
 </head>
 <body>
 
@@ -13,16 +13,19 @@
 	AdminBean admin = (AdminBean)request.getAttribute("admin");
 %>
 
-	<h2>管理者変更</h2>
-	<h1>管理者変更失敗画面</h1>
-	<p style="color: red;">管理者変更できませんでした</p>
-
-
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
+<h1>管理者登録失敗　　</h1>
+</div>
+<br>
+<br>
+<br>
+<h2>管理者の登録に失敗しました。</h2>
 <form action = "admindetail" method = "post">
 	<input type="hidden" name ="admin_id" value ="<%=admin.getAdmin_id() %>">
 	<input type="hidden" name ="admin_name" value ="<%=admin.getAdmin_name() %>">
 	<input type="hidden" name ="password" value ="<%=admin.getPassword() %>">
-	<input type = "submit" value = "管理者詳細画面に戻る">
+	<input class ="bookdeleteform" type = "submit" value = "管理者詳細画面に戻る">
 </form>
 </body>
 </html>

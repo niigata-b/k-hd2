@@ -5,13 +5,19 @@
 <head>
 <meta charset="UTF-8">
 <title>カテゴリ削除失敗画面</title>
-<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="insert.css">
 </head>
 <body>
-カテゴリを削除出来ませんでした。
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
+<h1>カテゴリ削除失敗</h1>
+<br>
+<br>
+<br>
+<h2>カテゴリを削除できませんでした。 </h2>
 
-	<form action="categorydeletelist" method="post">
-		<input type="submit" value="カテゴリ削除画面に戻る">
-	</form>
+<form action="categorydeletelist" method="post">
+<input class ="bookdeleteform"type="submit" value="カテゴリ削除画面に戻る">
+</form>
 </body>
 </html>

@@ -5,17 +5,26 @@
 <head>
 <meta charset="UTF-8">
 <title>カテゴリ登録失敗画面</title>
-<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="insert.css">
 </head>
 <body>
-	<h2>カテゴリ登録失敗画面</h2>
 	<%
 	BookBean book = (BookBean)request.getAttribute("book"); 
 	%>
-	以下のカテゴリ名は既に登録されています。  
-	<form action ="booklist" method="POST"> 
-	<input type="hidden" name ="category_name" value ="<%=book.getCategoryName() %>">
-	<input type="submit" value="図書一覧に戻る">
-	</form>
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
+<h1>カテゴリ登録失敗</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h2>カテゴリを登録できませんでした。 </h2>  
+<form action ="booklist" method="POST"> 
+<input type="hidden" name ="category_name" value ="<%=book.getCategoryName() %>">
+<input class ="bookdeleteform"type="submit" value="図書一覧に戻る">
+</form>
 </body>
 </html>

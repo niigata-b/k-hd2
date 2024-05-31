@@ -5,18 +5,26 @@
 <head>
 <meta charset="UTF-8">
 <title>図書個数変更失敗画面</title>
-<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="insert.css">
 </head>
 <body>
 <%
 	BookBean book = (BookBean)request.getAttribute("book");
 %>
-<h2>図書管理</h2>
-<h1>図書個数変更失敗画面</h1><br>
-図書個数変更に失敗しました。
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
+<h1>図書個数変更失敗</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h2>図書個数を変更できませんでした。 </h2>
 <form action ="bookdetail" method ="POST">
 <input type ="hidden" name ="isbn" value ="<%=book.getIsbn() %>">
-<input type ="submit" value="図書詳細画面に戻る">
+<input class ="bookdeleteform"type ="submit" value="図書詳細画面に戻る">
 </form>
 </body>
 </html>

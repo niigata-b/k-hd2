@@ -4,18 +4,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>管理者詳細画面</title>
-<link rel="stylesheet" href="style1.css">
+<title>図書一覧表示失敗画面</title>
+<link rel="stylesheet" href="insert.css">
 </head>
 <body>
-<h2>管理者管理</h2>
-<h1>管理者詳細画面</h1>
-
-<p style="color: red;">管理者詳細表示ができませんでした</p>
-
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
+<h1>図書一覧表示失敗</h1>
+<br>
+<br>
+<br>
+<h2>図書一覧を表示できませんでした。 </h2>
 <form action="adminlist" method="post">
-	<input type="submit" value="管理者一覧画面に戻る">
+<input class ="bookdeleteform"type="submit" value="管理者一覧画面に戻る">
 </form>
-
 </body>
 </html>
