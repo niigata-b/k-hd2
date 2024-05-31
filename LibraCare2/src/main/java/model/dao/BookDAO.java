@@ -110,12 +110,12 @@ public class BookDAO {
 		List<BookBean> bookList = new ArrayList<BookBean>();
 
 
-		String sql = "select * from book where book_name =?";
+		String sql = "select * from book where book_name like ?";
 
 		try (Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
 
-			pstmt.setString(1, book.getBookName());
+			pstmt.setString(1, "%"+book.getBookName()+"%");
 
 
 			// SQLの実行
