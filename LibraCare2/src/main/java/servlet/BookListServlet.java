@@ -53,6 +53,8 @@ public class BookListServlet extends HttpServlet {
 		BookDAO dao = new BookDAO(); 
 		CategoryDAO daoc = new CategoryDAO();
  				try {
+ 					dao.lendingflagfalse();
+ 					dao.lendingflagtrue();
 					bookList = dao.selectAll(); 
 					categoryList = daoc.categoryAll();
 				} catch (ClassNotFoundException e) {

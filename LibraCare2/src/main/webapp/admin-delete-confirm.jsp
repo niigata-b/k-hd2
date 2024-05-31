@@ -13,7 +13,7 @@
 %>
 <div class ="subdiv">
 <img class ="submenu" src="6.png" width ="300px">
-<h1>管理者削除　　　　　</h1>
+<h1>管理者削除確認　　　　　</h1>
 </div>
 <br>
 <p class="midasi">以下の管理者を削除します。よろしいですか？</p>

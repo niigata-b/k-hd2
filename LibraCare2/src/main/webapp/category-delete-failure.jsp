@@ -14,6 +14,10 @@
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
 <h2>カテゴリを削除できませんでした。 </h2>
 
 <form action="categorydeletelist" method="post">

@@ -17,6 +17,10 @@
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
 <h2>図書情報を削除出来ませんでした。</h2>
 <form action ="bookdetail" method="POST">
 <input type="hidden" name ="isbn" value ="<%=book.getIsbn() %>">

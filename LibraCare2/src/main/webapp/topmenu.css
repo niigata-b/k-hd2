@@ -68,6 +68,15 @@ form {
  margin-right: 50px;
 }
 
+.btn2 {
+ font-size: 40px;
+ padding:50px 50px 50px;
+ margin-top: 30px;
+ margin-bottom: 30px;
+ margin-left: 50px;
+ margin-right: 50px;
+}
+
 input {
   margin-bottom: 25px;
   margin-left: 10px;
