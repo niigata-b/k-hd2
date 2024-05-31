@@ -35,7 +35,6 @@
 <input type="hidden" name ="book_name" value ="<%=book.getBookName() %>">
 <input type="hidden" name ="category_name" value ="<%=book.getCategoryName() %>">
 <input type="hidden" name ="book_count" value ="<%=book.getBookCount() %>">
-
 <input type="hidden" name ="cancel" value =1>
 <input class ="returnbookdeteilform"type="submit" value ="キャンセル">
 </form>

@@ -5,18 +5,26 @@
 <head>
 <meta charset="UTF-8">
 <title>カテゴリ削除確定画面</title>
-<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="insert.css">
 </head>
 <body> 
 <%
 	BookBean book = (BookBean)request.getAttribute("book");
 %>
+<div class ="subdiv">
+<img class ="submenu" src="6.png" width ="300px">
+<h1>カテゴリ削除確定　　</h1>
+</div>
+<br>
+<br>
+<p class="midasi">以下の内容を削除しました。</p>
+	 
+<span>　カテゴリ名：</span>
+<input class ="inputform"type="text" name ="category_name" value="<%=book.getCategoryName() %> " readonly><br>
 	
-	以下のカテゴリー名を削除しました。<br> 
-	<%=book.getCategoryName() %>  
-	
-	<form action="book-menu.jsp" method="post"> 
-	<input type="submit" value="図書メニューに戻る">
-	</form>
+<form action="book-menu.jsp" method="post"> 
+<input class ="bookdeleteform" type="submit" value="図書メニューに戻る">
+</form>
+
 </body>
 </html>
