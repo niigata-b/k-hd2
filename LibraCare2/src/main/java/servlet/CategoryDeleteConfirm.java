@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.dao.CategoryDAO;
 import model.entity.BookBean;
 
 /**
@@ -44,6 +47,37 @@ public class CategoryDeleteConfirm extends HttpServlet {
 		String category_name = request.getParameter("category_name"); 
 		
 		String url ="category-delete-confirm.jsp";
+		
+		int cancel = 0;
+		
+		List<BookBean> categoryList = null;
+		
+		CategoryDAO dao = new CategoryDAO(); 
+		
+			try {
+				categoryList = dao.categoryAll();
+			} catch (ClassNotFoundException e) {
+				// TODO 自動生成された catch ブロック
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO 自動生成された catch ブロック
+					e.printStackTrace();
+			}
+		
+			request.setAttribute("categoryList",categoryList);
+			
+		try {
+			cancel = Integer.parseInt(request.getParameter("cancel"));
+		}
+		catch(Exception e)
+		{
+		}
+		
+		if (cancel == 1)
+		{
+			url = "categorydeleteform.jsp";
+		}
+		request.setAttribute("cancel", cancel);
 		
 		BookBean book = new BookBean();  
 		

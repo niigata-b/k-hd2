@@ -45,14 +45,11 @@ public class CategoryDeleteServlet extends HttpServlet {
 		String category_name = request.getParameter("category_name"); 
 
 		int count =0;
-		
 		String url =null;
 		BookBean book = new BookBean(); 
 		book.setCategoryName(category_name); 
 
 		CategoryDAO dao = new CategoryDAO();  
-		
-		
 			try {
 				count = dao.categoryDelete(book);
 			} catch (ClassNotFoundException e) {
@@ -60,12 +57,17 @@ public class CategoryDeleteServlet extends HttpServlet {
 				e.printStackTrace();
 			} catch (SQLException e) {
 				// TODO 自動生成された catch ブロック
+				url = "category-delete-failure.jsp";
 				e.printStackTrace();
 			}
 	
-			if(count!=0) { 
-				url="categorydeleteresult.jsp";
-			}
+		if(count != 0) { 
+			url= "categorydeleteresult.jsp";
+		}
+		else
+		{
+			url ="category-delete-failure.jsp";
+		}
 		
 		request.setAttribute("book", book);
 

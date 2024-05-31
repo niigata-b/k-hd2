@@ -15,7 +15,7 @@
 	以下のカテゴリー名を削除しました。<br> 
 	<%=book.getCategoryName() %>  
 	
-	<form action="book-menu" method="post"> 
+	<form action="book-menu.jsp" method="post"> 
 	<input type="submit" value="図書メニューに戻る">
 	</form>
 </body>
