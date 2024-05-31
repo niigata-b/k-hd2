@@ -64,7 +64,7 @@ if(!(messageNum.equals(null))) {
 %>
 <div id ="lendingcount">
 
-<p class ="lendcnt">貸出個数：</p>
+<p class ="lendcnt">貸出冊数：</p>
 
 <select class ="selectnum" name="lending_count">
 <option><%=lending_count%></option>

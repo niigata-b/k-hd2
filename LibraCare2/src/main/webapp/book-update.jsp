@@ -31,17 +31,17 @@
 %> 
 <div class ="subdiv">
 <img class ="submenu" src="6.png" width ="300px">
-<h1>図書個数変更　　　</h1>
+<h1>図書冊数変更　　　</h1>
 </div>
 <br>
-<p class="midasi">　増減する図書個数を入力してください。</p>
+<p class="midasi">　増減する図書冊数を入力してください。</p>
 <span>ISBN：</span>
 <input class ="inputform" type="text" name="book_name" value ="<%=book.getIsbn() %>" readonly>
 <span>図書名：</span>
 <input class ="inputform" type="text" name="book_name" value ="<%=book.getBookName() %>" readonly>
-<span>個数：</span>
+<span>冊数：</span>
 <input class ="inputform" type="text" name="book_name" value ="<%=book.getBookCount() %>" readonly>
-<span>総個数：</span>
+<span>総冊数：</span>
 <input class ="inputform" type="text" name="book_name" value ="<%=book.getTotalBookCount() %>" readonly><br>
 <%
 try {

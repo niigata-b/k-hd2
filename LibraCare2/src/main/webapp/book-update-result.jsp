@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>図書個数変更確認画面</title>
+<title>図書冊数変更確認画面</title>
 <link rel="stylesheet" href="insert.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
 %>
 <div class ="subdiv">
 <img class ="submenu" src="6.png" width ="300px">
-<h1>図書個数変更確定　　</h1>
+<h1>図書冊数変更確定　　</h1>
 </div>
 <br>
 <p class="midasi">以下の内容で変更しました。</p>
@@ -21,7 +21,7 @@
 <input class ="inputform" type="text" name ="user_id" value="<%=book.getIsbn() %>" readonly>
 <span>図書名：</span>
 <input class ="inputform" type="text" name ="book_name" value="<%=book.getBookName() %>" readonly><br>
-<span>　個数：</span>
+<span>　冊数：</span>
 <input class ="inputform" type="text" name ="book_count" value="<%=book.getBookCount() %>" readonly><br>
 <h2>から</h2>
 <% 
@@ -29,12 +29,12 @@ if(book.getHuyasu() != 0) {
 %>
 
 <input class ="inputform" type="text" name ="huyasu" value ="<%=book.getHuyasu() %>">
-<span>個増やしました。</span>
+<span>冊増やしました。</span>
 <%
 } else if(book.getHerasu() != 0) {
 %>
 <input class ="inputform" type="text" name ="herasu" value ="<%=book.getHerasu() %>">
-<span>個減らしました。</span>
+<span>冊減らしました。</span>
 <%
 }
 %>

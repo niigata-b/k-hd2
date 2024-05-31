@@ -38,7 +38,7 @@
   	<td><%=lending.getUserName() %></td>
   </tr>
   <tr>
-  	<th>貸出個数</th>
+  	<th>貸出冊数</th>
     <td><%=lending.getLendingCount() %></td>
   </tr>
   <tr>

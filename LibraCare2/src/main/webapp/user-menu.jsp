@@ -21,7 +21,7 @@
 <form action ="user-insert.jsp" method = "POST">
 <input class ="btn" type ="submit" value = "ユーザ登録">
 </form>
-
+<br>
 <form action ="menu" method = "POST">
 <input class ="btn" type ="submit" value = "トップメニューに戻る">
 </form>

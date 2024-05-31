@@ -34,15 +34,15 @@
 		<td><%=bookdetail.getCategoryName() %></td>
 	</tr>
 	<tr>
-		<th>個数</th>
+		<th>冊数</th>
 		<td><%=bookdetail.getBookCount() %></td>
 	</tr>
 	<tr>
-		<th>総個数</th>
+		<th>総冊数</th>
 		<td><%=bookdetail.getTotalBookCount() %></td>
 	</tr>
 	<tr>
-		<th>総貸出個数</th>
+		<th>総貸出冊数</th>
 		<td><%=bookdetail.getTotalLendingCount() %></td>
 	</tr>
 	<tr>

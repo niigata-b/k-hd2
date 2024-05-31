@@ -24,7 +24,7 @@
 <input class ="inputform"type="text" name ="isbn" value="<%=book.getBookName() %>" readonly><br>
 <span>カテゴリ名：</span>
 <input class ="inputform"type="text" name ="isbn" value="<%=book.getCategoryName() %>" readonly><br>
-<span>　　　個数：</span>
+<span>　　　冊数：</span>
 <input class ="inputform"type="text" name ="isbn" value="<%=book.getBookCount() %>" readonly><br>
 
 <form action ="booklist" method="POST">

@@ -15,23 +15,23 @@
 <br>
 
 <form action="booklist" method="post">
-<input class ="btn2" type="submit" value="　図書一覧　">
+<input class ="btn" type="submit" value="　図書一覧　">
 </form>
 
 <form action="bookinsertcategorylist" method="post">
-<input class ="btn2" type="submit" value="　図書登録　">
+<input class ="btn" type="submit" value="　図書登録　">
 </form>
 <br>
 <form action="category-insert.jsp" method="post">
-<input class ="btn2" type="submit" value="カテゴリ登録">
+<input class ="btn" type="submit" value="カテゴリ登録">
 </form>
 
 <form action="categorydeletelist" method="post">
-<input class ="btn2" type="submit" value="カテゴリ削除">
+<input class ="btn" type="submit" value="カテゴリ削除">
 </form>
 <br>
 <form action ="top-menu.jsp" method = "POST">
-<input class ="btn2" type ="submit" value = "トップメニューに戻る">
+<input id ="btn2" type ="submit" value = "トップメニューに戻る">
 </form>
 
 </body>

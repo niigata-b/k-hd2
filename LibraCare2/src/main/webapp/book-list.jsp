@@ -7,6 +7,14 @@
 <title>図書一覧画面</title>
 <link rel="stylesheet" href="list.css">
 </head>
+<style>
+p{
+margin-bottom:0px;
+}
+div{
+margin-top:-5px;
+}
+</style>
 <body> 
 <%
 	List<BookBean> bookList = (List<BookBean>) request.getAttribute("bookList"); 
@@ -14,7 +22,7 @@
  	BookBean bs = (BookBean)request.getAttribute("book");
 	String message = (String) request.getAttribute("message"); 
 	String book_name = " ";
-	String category_name = "  ";
+	String category_name = " ";
 	try {
 		book_name = bs.getBookName();
 	} catch(NullPointerException e) {
@@ -25,7 +33,6 @@
 		category_name = "";
 	}
 %>
-
 <div class ="subdiv">
 <img class ="submenu" src="6.png" width ="300px">
 <h1>図書一覧　　　</h1>
@@ -66,11 +73,10 @@ for (BookBean category : categoryList) {
 <th>ISBN</th>
 <th>図書名</th>
 <th>カテゴリ名</th>
-<th>個数</th>
+<th>冊数</th>
 <th>貸出中フラグ</th>
 <th></th>
 </tr>
-		
 <%
 	for (BookBean book : bookList) {
 %>

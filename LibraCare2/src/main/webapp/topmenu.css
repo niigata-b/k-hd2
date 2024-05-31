@@ -61,21 +61,15 @@ form {
 
 .btn {
  font-size: 40px;
- padding:60px 60px 60px;
+ padding:40px 40px 40px;
  margin-top: 30px;
  margin-bottom: 30px;
  margin-left: 50px;
  margin-right: 50px;
 }
 
-.btn2 {
- font-size: 40px;
- padding:50px 50px 50px;
- margin-top: 30px;
- margin-bottom: 30px;
- margin-left: 50px;
- margin-right: 50px;
-}
+
+
 
 input {
   margin-bottom: 25px;
@@ -101,6 +95,14 @@ input:hover {
 input:active {
   transform: translateY(2px) translateX(1px);
   box-shadow: 0 0 0 0 black;
+}
+
+#btn2 {
+ display:inline;
+ position:absolute;
+ font-size: px;
+ bottom:50px;
+ right:0px;
 }
 
 #loginbtn {

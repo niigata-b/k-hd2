@@ -21,7 +21,7 @@
 <form action="admin-insert.jsp" method="post">
 <input class ="btn" type="submit" value="管理者登録">
 </form>
-
+<br>
 <form action ="menu" method = "POST">
 <input class ="btn" type ="submit" value = "トップメニューに戻る">
 </form>

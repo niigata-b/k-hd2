@@ -23,7 +23,7 @@
 <input class ="inputform"type="text" name ="user_id" value="<%=lending.getUserId() %>" readonly><br>
 <span>　　ISBN：</span>
 <input class ="inputform"type="text" name ="isbn" value="<%=lending.getIsbn() %>" readonly><br>
-<span>貸出個数：</span>
+<span>貸出冊数：</span>
 <input class ="inputform"type="text" name ="lending_count" value="<%=lending.getLendingCount() %>" readonly><br>
 <input class ="bookdeleteform"type ="submit" value="貸出登録確定">
 </form>

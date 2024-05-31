@@ -25,7 +25,7 @@
 <input class ="inputform"type="text" name ="book_name" value="<%=book.getBookName() %>" readonly><br>
 <span>カテゴリ名：</span>
 <input class ="inputform"type="text" name ="category_name" value="<%=book.getCategoryName() %>" readonly><br>
-<span>　　　個数：</span>
+<span>　　　冊数：</span>
 <input class ="inputform"type="text" name ="book_count" value="<%=book.getBookCount() %>" readonly><br>
 <input class ="bookdeleteform"type ="submit" value="図書登録確定">
 </form>

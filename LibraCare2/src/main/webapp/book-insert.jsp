@@ -80,7 +80,7 @@ if(!(messageNum.equals(null))) {
 {
 }
 %>
-<span>個数：</span>
+<span>冊数：</span>
 <input class ="inputform" type="text" name="book_count" value ="<%=book_count%>"><br>
 <input class ="bookinsertform" type="submit"value="登録">
 </form>
