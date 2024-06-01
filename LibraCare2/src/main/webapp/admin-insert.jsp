@@ -71,7 +71,7 @@ try {
 <input class="inputform" type="text" name="admin_name" id="admin_name"  value=<%=admin_name%>><br>
 <span>パスワード名：</span>
 <input class ="inputform" type=password name="password" id="password"  value=<%=password%>><br>
-<input class ="insertform" type="submit" value="登録">
+<input class ="insertform" type="submit" value="管理者登録">
 </form>
 
 <form action="admin-management-menu.jsp" method="post">

@@ -11,9 +11,6 @@
 p{
 margin-bottom:0px;
 }
-div{
-margin-top:-5px;
-}
 </style>
 <body> 
 <%
@@ -38,16 +35,18 @@ margin-top:-5px;
 <h1>図書一覧　　　</h1>
 </div>
 <br>
+<div class ="bookdiv">
 <p class ="searchp">検索したい図書名またはカテゴリ名を入力してください。</p>
 <form action="booksearch" method="post">
-<input class ="inputformbook" type="search" name="book_name" value="<%=book_name%>">
+<input class ="inputformbook" type="search" name="book_name" value="<%=book_name%>" placeholder ="図書名">
 <input type="hidden" name="category_name" value="<%=category_name%>">   
 <input class = "searchbtnbook" type="submit" value="検索">
 </form> 
 	
-<form action="categorysearch" method="post">
+<form id = "cateform" action="categorysearch" method="post">
 <input class ="inputform" type="hidden" name="book_name" value="<%=book_name%>">
 <select class ="selectcategory" name="category_name"> 
+<option value="" disabled selected style="display:none;">カテゴリ名
 <option><%=category_name%></option>
 <% 
 for (BookBean category : categoryList) {  
@@ -57,6 +56,7 @@ for (BookBean category : categoryList) {
 </select>  
 <input class = "searchbtn2" type="submit" value="検索">  
 </form>
+</div>
 <% 
 	try {
 		if(!(message.equals(null))) {

@@ -44,7 +44,7 @@ if(!(messageNull.equals(null))) {
 <input class ="inputform" id = "user_id" type="text" name="user_id" onchange="userIdJudge()" value=<%=user_id %>><br>
 <span>ユーザ名：</span>
 <input class ="inputform" type="text" name="user_name" value=<%=user_name %>><br>
-<input class ="insertform" type="submit" value="登録"> 
+<input class ="insertform" type="submit" value="ユーザ登録"> 
 </form>
 
 <form action="user-menu.jsp" method="POST">

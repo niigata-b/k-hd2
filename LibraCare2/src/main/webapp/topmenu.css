@@ -100,9 +100,8 @@ input:active {
 #btn2 {
  display:inline;
  position:absolute;
- font-size: px;
  bottom:50px;
- right:0px;
+ right:30px;
 }
 
 #loginbtn {

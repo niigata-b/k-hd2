@@ -82,7 +82,7 @@ if(!(messageNum.equals(null))) {
 %>
 <span>冊数：</span>
 <input class ="inputform" type="text" name="book_count" value ="<%=book_count%>"><br>
-<input class ="bookinsertform" type="submit"value="登録">
+<input class ="bookinsertform" type="submit"value="図書登録">
 </form>
 
 <form action ="book-menu.jsp" metod ="POST">

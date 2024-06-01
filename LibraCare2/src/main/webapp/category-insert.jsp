@@ -40,7 +40,7 @@
 <br>
 <span>カテゴリ名：</span>
 	<input class ="inputform" type="text" name="category_name" value="<%=category_name%>"> 
-	<input class ="insertform" type="submit"value="カテゴリー名登録">
+	<input class ="insertform" type="submit"value="カテゴリ名登録">
 	</form>
 	<form action="book-menu.jsp" method="post">
 	<input class ="returnmenuform" type="submit" value="キャンセル">
