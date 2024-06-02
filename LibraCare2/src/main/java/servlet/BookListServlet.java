@@ -46,7 +46,8 @@ public class BookListServlet extends HttpServlet {
 
 		String url = null;
 
-
+		BookBean book = (BookBean)request.getAttribute("book");
+		
 		List<BookBean> bookList = null;  
 		List<BookBean> categoryList = null;
 		
@@ -67,7 +68,7 @@ public class BookListServlet extends HttpServlet {
 	
 			if (bookList!=null) {
 
-
+			 request.setAttribute("book", book);
 			 request.setAttribute("bookList",bookList); 
 			 request.setAttribute("categoryList", categoryList);
 				url = "book-list.jsp"; //図書一覧へ

@@ -47,7 +47,7 @@ margin-bottom:0px;
 <input class ="inputform" type="hidden" name="book_name" value="<%=book_name%>">
 <select class ="selectcategory" name="category_name"> 
 <option value="" disabled selected style="display:none;">カテゴリ名
-<option><%=category_name%></option>
+ 
 <% 
 for (BookBean category : categoryList) {  
 %>  

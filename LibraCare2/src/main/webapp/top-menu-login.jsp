@@ -34,7 +34,6 @@ try {
 <input class ="inputform" type="password" name="password" id="password"><br>
 <input class = "insertformlogin" type="submit" value="ログイン" >
 </form>
-
 <script>
 	function OnButtonClick() {
 		var password = document.getElementById('password').value; // HTML要素オブジェクトを取得

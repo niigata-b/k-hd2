@@ -59,7 +59,6 @@ public class CategorySearchServlet extends HttpServlet {
 		
 		CategoryDAO daoc = new CategoryDAO();
 		
-			
 		try {
 			
 			bookList = daoc.categorySearch(book);
@@ -77,15 +76,11 @@ public class CategorySearchServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		
 		// リクエストスコープへの属性の設定 
 		request.setAttribute("categoryList", categoryList);
 		request.setAttribute("bookList", bookList);
 		request.setAttribute("book",book);
 
-			
-			
-		
 		
 		// リクエストスコープへの属性の設定
 		
