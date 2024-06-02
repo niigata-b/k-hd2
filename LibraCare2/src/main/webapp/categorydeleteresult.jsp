@@ -23,7 +23,7 @@
 <input class ="inputform"type="text" name ="category_name" value="<%=book.getCategoryName() %> " readonly><br>
 	
 <form action="book-menu.jsp" method="post"> 
-<input class ="bookdeleteform" type="submit" value="図書メニューに戻る">
+<input class ="bookdeleteform" type="submit" value="図書管理メニューに戻る">
 </form>
 
 </body>
