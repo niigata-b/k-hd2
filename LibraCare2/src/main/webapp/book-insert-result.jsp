@@ -28,6 +28,6 @@
 <input class ="inputform"type="text" name ="admin_name" value="<%=book.getBookCount() %>" readonly><br>
 
 <form action ="book-menu.jsp" method="POST">
-<input class ="bookdeleteform"type ="submit" value="貸出情報一覧画面に戻る">
+<input class ="bookdeleteform"type ="submit" value="図書管理メニューに戻る">
 </body>
 </html>

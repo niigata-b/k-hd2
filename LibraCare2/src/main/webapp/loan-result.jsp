@@ -25,8 +25,8 @@
 <span>　貸出数：</span>
 <input class ="inputform"type="text" name ="admin_id" value="<%=lending.getLendingCount() %>" readonly><br>
 <br>
-<form action ="lendinglist" method="POST">
-<input class ="bookdeleteform"type ="submit" value="貸出情報一覧画面に戻る">
+<form action ="lending-return-menu.jsp" method="POST">
+<input class ="bookdeleteform"type ="submit" value="貸出返却メニューに戻る">
 </form>
 
 </body>

@@ -26,7 +26,7 @@
 <input class ="inputform"type="text" name ="password" value="<%=admin.getPassword() %>" readonly><br>
 
 <form action = "admin-management-menu.jsp" method = "post">
-<input class ="bookdeleteform"type = "submit" value = "管理者登録メニューに戻る">
+<input class ="bookdeleteform"type = "submit" value = "管理者管理メニューに戻る">
 </form>
 
 </body>

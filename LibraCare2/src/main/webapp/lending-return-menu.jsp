@@ -5,12 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="topmenu.css">
-<title>貸出返却メニュー</title>
+<title>貸出返却管理メニュー</title>
 </head>
 <body>
 <div class ="subdiv">
 <img class ="submenu" src="6.png" width ="300px">
-<h1>貸出返却メニュー</h1>
+<h1>貸出返却管理メニュー</h1>
 </div>
 <br>
 
